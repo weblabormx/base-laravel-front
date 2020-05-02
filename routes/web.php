@@ -21,6 +21,6 @@ Auth::routes();
 
 Route::group(['prefix' => 'admin'], function () 
 {
-	Route::get('/', 'HomeController@index');
+	Route::page('Dashboard', '/');
 });
 

@@ -18,6 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div id="app">
@@ -72,9 +73,28 @@
             </div>
         </nav>
 
-        <main class="py-4">
-            @yield('content')
+        @yield('after-nav')
+        <main class="container-fluid container">
+            @if(View::hasSection('sidebar') && strlen(trim(View::getSections()['sidebar']))>0)
+                <div class="row">
+                    <div class="col-sm-3 py-4">
+                        @yield('sidebar')
+                    </div>
+                    <div class="col-sm-9 py-4">
+                        @include('flash::message')
+                        @yield('content')
+                    </div>
+                </div>
+            @else
+                <div class="py-4">
+                    @include('flash::message')
+                    @yield('content')
+                </div>
+            @endif
         </main>
     </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
+    @yield('scripts-footer')
 </body>
 </html>
