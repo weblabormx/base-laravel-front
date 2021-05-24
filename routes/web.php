@@ -24,3 +24,4 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function ()
 	Route::page('Dashboard', '/');
 });
 
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

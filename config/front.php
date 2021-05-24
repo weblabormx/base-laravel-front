@@ -2,7 +2,18 @@
 
 return [
 
-	/*
+    /*
+    |--------------------------------------------------------------------------
+    | Front's resources Folder
+    |--------------------------------------------------------------------------
+    |
+    | This is the folder location where the front resources are located
+    |
+    */
+
+    'resources_folder' => 'App\Front',
+
+    /*
     |--------------------------------------------------------------------------
     | Model's Folder
     |--------------------------------------------------------------------------
@@ -12,7 +23,7 @@ return [
     |
     */
 
-    'models_folder' => 'App',
+    'models_folder' => 'App\Models',
 
     /*
     |--------------------------------------------------------------------------
@@ -38,5 +49,28 @@ return [
     */
 
     'default_search_filter' => App\Front\Filters\SearchFilter::class,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Default Layout Name
+    |--------------------------------------------------------------------------
+    |
+    | The default layout name that uses Laravel Front
+    |
+    */
+
+    'default_layout' => 'layouts.app',
+
+    /*
+    |--------------------------------------------------------------------------
+    | Hidden default value
+    |--------------------------------------------------------------------------
+    |
+    | If you want to get the exactly value added on Hidden::make('The Value') set "title" (In this case it will use the column 'The Value')
+    | Otherwise put "value" to convert to lower case and Snake case, example: "the_value" instead
+    |
+    */
+
+    'hidden_value' => 'column',
 
 ];
