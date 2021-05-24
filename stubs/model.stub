@@ -3,11 +3,21 @@
 namespace {{ namespace }};
 
 use Illuminate\Database\Eloquent\Model;
+use Nicolaslopezj\Searchable\SearchableTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class {{ class }} extends Model
 {
-	use SoftDeletes;
+	use SearchableTrait, SoftDeletes;
+	
+    protected $guarded = [];
+    protected $searchable = [
+        'columns' => [
+            'name' => 10,
+        ],
+    ];
 
-	protected $guarded = [];
+    /**
+     * Relationships
+     */
 }
