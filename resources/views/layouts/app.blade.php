@@ -27,6 +27,18 @@
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
+                @isset($front)
+                    <form action="{{$front->base_url}}" method="GET" class="ml-5">
+                        @php $request = collect(request()->all())->filter(function($item, $key) { return $key!='search' && !is_array($item) && strlen($item)>0; }); @endphp
+                        @foreach($request as $key => $value)
+                            <input type="hidden" name="{{$key}}" value="{{$value}}">
+                        @endforeach
+                        <input id="search" type="text" name="search" placeholder="Buscar {{$front->label}}" value="{{request()->search}}" class="px-2">
+                        <button type="submit" class="border">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </form>
+                @endisset
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -94,7 +106,6 @@
         </main>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
     @yield('scripts-footer')
 </body>
 </html>
