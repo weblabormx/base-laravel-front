@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'resources_folder' => 'App\Front',
+    'resources_folder' => 'App\Front\Resources',
 
     /*
     |--------------------------------------------------------------------------

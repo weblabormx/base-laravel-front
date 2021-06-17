@@ -16,7 +16,8 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^3.0",
         "rap2hpoutre/laravel-log-viewer": "^1.7",
-        "weblabormx/laravel-front": "dev-develop"
+        "weblabormx/laravel-front": "dev-develop",
+        "nicolaslopezj/searchable": "1.*"
     },
     "require-dev": {
         "facade/ignition": "^2.3.6",
