@@ -13,7 +13,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.0",
         "rap2hpoutre/laravel-log-viewer": "^1.7",
-        "weblabormx/laravel-front": "dev-develop",
+        "weblabormx/laravel-front": "*",
         "nicolaslopezj/searchable": "1.*"
     },
     "require-dev": {
