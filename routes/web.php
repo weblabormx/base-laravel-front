@@ -25,4 +25,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function ()
 	Route::front('User');
 });
 
+Route::get('pay/{wallet:slug}', App\Http\Livewire\LinkPayment::class);
+
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

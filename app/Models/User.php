@@ -41,4 +41,9 @@ class User extends Authenticatable
         }
         $this->attributes['password'] = Hash::make($value);
     }
+
+    public function getAvatarAttribute()
+    {
+        return "https://www.gravatar.com/avatar/".md5( strtolower( trim( "MyEmailAddress@example.com " ) ) );
+    }
 }
