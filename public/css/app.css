@@ -734,9 +734,9 @@ select{
   margin-left: auto;
   margin-right: auto;
 }
-.mx-12{
-  margin-left: 3rem;
-  margin-right: 3rem;
+.my-24{
+  margin-top: 6rem;
+  margin-bottom: 6rem;
 }
 .-my-2{
   margin-top: -0.5rem;
@@ -757,14 +757,6 @@ select{
 .my-3{
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
-}
-.my-12{
-  margin-top: 3rem;
-  margin-bottom: 3rem;
-}
-.my-24{
-  margin-top: 6rem;
-  margin-bottom: 6rem;
 }
 .mt-6{
   margin-top: 1.5rem;
@@ -1112,15 +1104,19 @@ select{
   margin-right: calc(2.5rem * var(--tw-space-x-reverse));
   margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse)));
 }
+.divide-y > :not([hidden]) ~ :not([hidden]){
+  --tw-divide-y-reverse: 0;
+  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
+  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+}
 .divide-y-2 > :not([hidden]) ~ :not([hidden]){
   --tw-divide-y-reverse: 0;
   border-top-width: calc(2px * calc(1 - var(--tw-divide-y-reverse)));
   border-bottom-width: calc(2px * var(--tw-divide-y-reverse));
 }
-.divide-y > :not([hidden]) ~ :not([hidden]){
-  --tw-divide-y-reverse: 0;
-  border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
-  border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
+.divide-gray-200 > :not([hidden]) ~ :not([hidden]){
+  --tw-divide-opacity: 1;
+  border-color: rgb(229 231 235 / var(--tw-divide-opacity));
 }
 .divide-gray-50 > :not([hidden]) ~ :not([hidden]){
   --tw-divide-opacity: 1;
@@ -1129,10 +1125,6 @@ select{
 .divide-gray-300 > :not([hidden]) ~ :not([hidden]){
   --tw-divide-opacity: 1;
   border-color: rgb(209 213 219 / var(--tw-divide-opacity));
-}
-.divide-gray-200 > :not([hidden]) ~ :not([hidden]){
-  --tw-divide-opacity: 1;
-  border-color: rgb(229 231 235 / var(--tw-divide-opacity));
 }
 .overflow-hidden{
   overflow: hidden;
@@ -1229,6 +1221,10 @@ select{
   --tw-bg-opacity: 1;
   background-color: rgb(219 234 254 / var(--tw-bg-opacity));
 }
+.bg-green-100{
+  --tw-bg-opacity: 1;
+  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
+}
 .bg-green-50{
   --tw-bg-opacity: 1;
   background-color: rgb(240 253 244 / var(--tw-bg-opacity));
@@ -1248,14 +1244,6 @@ select{
 .bg-red-600{
   --tw-bg-opacity: 1;
   background-color: rgb(220 38 38 / var(--tw-bg-opacity));
-}
-.bg-green-100{
-  --tw-bg-opacity: 1;
-  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
-}
-.bg-indigo-600{
-  --tw-bg-opacity: 1;
-  background-color: rgb(79 70 229 / var(--tw-bg-opacity));
 }
 .bg-opacity-75{
   --tw-bg-opacity: 0.75;
@@ -1287,11 +1275,11 @@ select{
 .p-8{
   padding: 2rem;
 }
-.p-2{
-  padding: 0.5rem;
-}
 .p-4{
   padding: 1rem;
+}
+.p-2{
+  padding: 0.5rem;
 }
 .p-5{
   padding: 1.25rem;
@@ -1340,6 +1328,10 @@ select{
   padding-left: 2rem;
   padding-right: 2rem;
 }
+.py-4{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
 .px-5{
   padding-left: 1.25rem;
   padding-right: 1.25rem;
@@ -1351,10 +1343,6 @@ select{
 .py-3\.5{
   padding-top: 0.875rem;
   padding-bottom: 0.875rem;
-}
-.py-4{
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 .py-20{
   padding-top: 5rem;
@@ -1519,6 +1507,18 @@ select{
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
 }
+.text-red-600{
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
+}
+.text-indigo-600{
+  --tw-text-opacity: 1;
+  color: rgb(79 70 229 / var(--tw-text-opacity));
+}
+.text-green-600{
+  --tw-text-opacity: 1;
+  color: rgb(22 163 74 / var(--tw-text-opacity));
+}
 .text-red-400{
   --tw-text-opacity: 1;
   color: rgb(248 113 113 / var(--tw-text-opacity));
@@ -1534,18 +1534,6 @@ select{
 .text-blue-400{
   --tw-text-opacity: 1;
   color: rgb(96 165 250 / var(--tw-text-opacity));
-}
-.text-red-600{
-  --tw-text-opacity: 1;
-  color: rgb(220 38 38 / var(--tw-text-opacity));
-}
-.text-indigo-600{
-  --tw-text-opacity: 1;
-  color: rgb(79 70 229 / var(--tw-text-opacity));
-}
-.text-green-600{
-  --tw-text-opacity: 1;
-  color: rgb(22 163 74 / var(--tw-text-opacity));
 }
 .antialiased{
   -webkit-font-smoothing: antialiased;
@@ -1783,13 +1771,13 @@ select{
     margin-left: auto;
     margin-right: auto;
   }
-  .sm\:-mx-6{
-    margin-left: -1.5rem;
-    margin-right: -1.5rem;
-  }
   .sm\:my-8{
     margin-top: 2rem;
     margin-bottom: 2rem;
+  }
+  .sm\:-mx-6{
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
   }
   .sm\:mt-16{
     margin-top: 4rem;
@@ -1878,11 +1866,11 @@ select{
   .sm\:rounded-md{
     border-radius: 0.375rem;
   }
-  .sm\:p-6{
-    padding: 1.5rem;
-  }
   .sm\:p-0{
     padding: 0px;
+  }
+  .sm\:p-6{
+    padding: 1.5rem;
   }
   .sm\:px-6{
     padding-left: 1.5rem;
