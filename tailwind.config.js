@@ -1,14 +1,10 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+import defaultTheme from 'tailwindcss/defaultTheme';
+import forms from '@tailwindcss/forms';
 
-module.exports = {
+export default {
   content: [
     "./resources/**/*.blade.php",
-    "./resources/**/**/*.blade.php",
-    "./resources/**/**/**/*.blade.php",
-    "./resources/**/**/**/**/*.blade.php",
-    "./resources/**/**/**/**/**/*.blade.php",
     "./resources/**/*.js",
-    "./resources/**/*.vue",
   ],
   theme: {
     extend: {
