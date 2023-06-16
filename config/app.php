@@ -14,8 +14,21 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Application Brand
+    |--------------------------------------------------------------------------
+    |
+    | This are the values of your brand. This values are used  to customize
+    | the look and feel of your application according your own business
+    | branding. Feel free to add more!
+    |
+    */
+
     'logo' => "/logo.png",
-    'icono' => "/icono.png",
+
+    'icon' => "/icono.png",
 
     /*
     |--------------------------------------------------------------------------
