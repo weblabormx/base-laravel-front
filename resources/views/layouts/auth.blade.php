@@ -5,15 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Sea Cow - App</title>
+    <title> @yield('title', config('app.name')) </title>
 
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link rel="shortcut icon" href="{{ asset(config('app.icon')) }}" />
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="shortcut icon" href="{{ config('app.icono') }}" />
 </head>
 
 <body class="h-full">

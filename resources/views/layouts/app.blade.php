@@ -9,7 +9,7 @@
 
     <title> @yield('title', config('app.name')) </title>
 
-    <link rel="shortcut icon" href="{{ config('app.icon') }}" />
+    <link rel="shortcut icon" href="{{ asset(config('app.icon')) }}" />
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -57,7 +57,7 @@
                 <!-- Sidebar component, swap this element with another sidebar if you like -->
                 <div class="flex overflow-y-auto flex-col flex-grow pt-5 bg-white border-r border-gray-200">
                     <div class="flex flex-shrink-0 items-center px-4">
-                        <img class="w-auto h-10" src="{{ config('app.icono') }}" alt="Your Company">
+                        <img class="w-auto h-10" src="{{ asset(config('app.icon')) }}" alt="Your Company">
                     </div>
                     <div class="flex flex-col flex-grow mt-5">
                         <nav class="flex-1 px-2 pb-4 space-y-1">

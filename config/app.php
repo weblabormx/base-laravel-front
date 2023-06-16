@@ -26,9 +26,9 @@ return [
     |
     */
 
-    'logo' => "/logo.png",
+    'logo' => "images/logo.svg",
 
-    'icon' => "/icono.png",
+    'icon' => "images/icon.svg",
 
     /*
     |--------------------------------------------------------------------------

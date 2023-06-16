@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Sea Cow - Be part of the cripto easily</title>
+    <title>Your new project ✨</title>
 
+    <link rel="shortcut icon" href="{{ asset(config('app.icon')) }}" />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
