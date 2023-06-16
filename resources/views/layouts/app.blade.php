@@ -17,42 +17,12 @@
 <body class="h-full">
     <div id="app">
         <div x-data="{ menu_user: false, menu: false }">
-            <!-- Off-canvas menu for mobile, show/hide based on off-canvas menu state. -->
             <div class="relative z-40 md:hidden" role="dialog" aria-modal="true" x-show="menu">
-                <!--
-                  Off-canvas menu backdrop, show/hide based on off-canvas menu state.
 
-                  Entering: "transition-opacity ease-linear duration-300"
-                    From: "opacity-0"
-                    To: "opacity-100"
-                  Leaving: "transition-opacity ease-linear duration-300"
-                    From: "opacity-100"
-                    To: "opacity-0"
-                -->
                 <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
 
                 <div class="flex fixed inset-0 z-40">
-                    <!--
-                    Off-canvas menu, show/hide based on off-canvas menu state.
-
-                    Entering: "transition ease-in-out duration-300 transform"
-                      From: "-translate-x-full"
-                      To: "translate-x-0"
-                    Leaving: "transition ease-in-out duration-300 transform"
-                      From: "translate-x-0"
-                      To: "-translate-x-full"
-                  -->
                     <div class="flex relative flex-col flex-1 pt-5 pb-4 w-full max-w-xs bg-white">
-                        <!--
-                      Close button, show/hide based on off-canvas menu state.
-
-                      Entering: "ease-in-out duration-300"
-                        From: "opacity-0"
-                        To: "opacity-100"
-                      Leaving: "ease-in-out duration-300"
-                        From: "opacity-100"
-                        To: "opacity-0"
-                    -->
                         <div class="absolute top-0 right-0 pt-2 -mr-12">
                             <button type="button"
                                 class="flex justify-center items-center ml-1 w-10 h-10 rounded-full focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
@@ -164,26 +134,9 @@
                                             alt="Profile image">
                                     </button>
                                 </div>
-
-                                <!--
-                          Dropdown menu, show/hide based on menu state.
-
-                          Entering: "transition ease-out duration-100"
-                            From: "transform opacity-0 scale-95"
-                            To: "transform opacity-100 scale-100"
-                          Leaving: "transition ease-in duration-75"
-                            From: "transform opacity-100 scale-100"
-                            To: "transform opacity-0 scale-95"
-                        -->
                                 <div class="absolute right-0 z-10 py-1 mt-2 w-48 bg-white rounded-md ring-1 ring-black ring-opacity-5 shadow-lg origin-top-right focus:outline-none"
                                     role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
                                     tabindex="-1" x-show="menu_user">
-                                    <!-- Active: "bg-gray-100", Not Active: "" -->
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
-                                        tabindex="-1" id="user-menu-item-0">Your Profile</a>
-
-                                    <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem"
-                                        tabindex="-1" id="user-menu-item-1">Settings</a>
 
                                     <div class="" aria-labelledby="navbarDropdown">
                                         <a class="block px-4 py-2 text-sm text-gray-700" href="{{ route('logout') }}"
