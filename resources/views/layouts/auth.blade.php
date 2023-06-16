@@ -11,11 +11,7 @@
 
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
 
-    <!-- Scripts -->
-    <script src="//unpkg.com/alpinejs" defer></script>
-
-    <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     <link rel="shortcut icon" href="{{config('app.icono')}}" />
     @livewireStyles
 </head>
