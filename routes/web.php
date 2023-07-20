@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Livewire;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,17 +16,20 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
 Auth::routes();
 
-Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () 
-{
+// Front admin panel
+Route::middleware('auth')->prefix('admin')->group(function () {
 	Route::page('Dashboard', '/');
 	Route::front('User');
 });
 
-// Route::get('pay/{wallet:slug}', App\Http\Livewire\LinkPayment::class); // Example of how implement Livewire, erase it once its used
+// Livewire admin panel
+Route::middleware('auth')->prefix('app')->group(function () {
+	Route::get('account', Livewire\AccountManager::class);
+});
 
-Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->middleware('auth');
