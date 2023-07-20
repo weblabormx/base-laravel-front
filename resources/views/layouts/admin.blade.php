@@ -14,8 +14,8 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
-<body class="h-full">
-    <div id="app">
+<body>
+    <div>
         <div x-data="{ menu_user: false, menu: false }">
             <div class="relative z-40 md:hidden" role="dialog" aria-modal="true" x-show="menu">
 
