@@ -1,130 +1,67 @@
-<div class="bg-white px-4 py-5 shadow sm:rounded-lg sm:px-6">
-  <h2 id="timeline-title" class="text-lg font-medium text-gray-900">Timeline</h2>
-
-  <!-- Activity Feed -->
-  <div class="mt-6 flow-root">
-    <ul role="list" class="-mb-8">
-      <li>
-        <div class="relative pb-8">
-          <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
-          <div class="relative flex space-x-3">
-            <div>
-              <span class="h-8 w-8 rounded-full bg-gray-400 flex items-center justify-center ring-8 ring-white">
-                <!-- Heroicon name: mini/user -->
-                <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path d="M10 8a3 3 0 100-6 3 3 0 000 6zM3.465 14.493a1.23 1.23 0 00.41 1.412A9.957 9.957 0 0010 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 00-13.074.003z" />
-                </svg>
-              </span>
-            </div>
-            <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-              <div>
-                <p class="text-sm text-gray-500">Applied to <a href="#" class="font-medium text-gray-900">Front End Developer</a></p>
-              </div>
-              <div class="whitespace-nowrap text-right text-sm text-gray-500">
-                <time datetime="2020-09-20">Sep 20</time>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <div class="relative pb-8">
-          <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
-          <div class="relative flex space-x-3">
-            <div>
-              <span class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center ring-8 ring-white">
-                <!-- Heroicon name: mini/hand-thumb-up -->
-                <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path d="M1 8.25a1.25 1.25 0 112.5 0v7.5a1.25 1.25 0 11-2.5 0v-7.5zM11 3V1.7c0-.268.14-.526.395-.607A2 2 0 0114 3c0 .995-.182 1.948-.514 2.826-.204.54.166 1.174.744 1.174h2.52c1.243 0 2.261 1.01 2.146 2.247a23.864 23.864 0 01-1.341 5.974C17.153 16.323 16.072 17 14.9 17h-3.192a3 3 0 01-1.341-.317l-2.734-1.366A3 3 0 006.292 15H5V8h.963c.685 0 1.258-.483 1.612-1.068a4.011 4.011 0 012.166-1.73c.432-.143.853-.386 1.011-.814.16-.432.248-.9.248-1.388z" />
-                </svg>
-              </span>
-            </div>
-            <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-              <div>
-                <p class="text-sm text-gray-500">Advanced to phone screening by <a href="#" class="font-medium text-gray-900">Bethany Blake</a></p>
-              </div>
-              <div class="whitespace-nowrap text-right text-sm text-gray-500">
-                <time datetime="2020-09-22">Sep 22</time>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <div class="relative pb-8">
-          <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
-          <div class="relative flex space-x-3">
-            <div>
-              <span class="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center ring-8 ring-white">
-                <!-- Heroicon name: mini/check -->
-                <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                </svg>
-              </span>
-            </div>
-            <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-              <div>
-                <p class="text-sm text-gray-500">Completed phone screening with <a href="#" class="font-medium text-gray-900">Martha Gardner</a></p>
-              </div>
-              <div class="whitespace-nowrap text-right text-sm text-gray-500">
-                <time datetime="2020-09-28">Sep 28</time>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <div class="relative pb-8">
-          <span class="absolute top-4 left-4 -ml-px h-full w-0.5 bg-gray-200" aria-hidden="true"></span>
-          <div class="relative flex space-x-3">
-            <div>
-              <span class="h-8 w-8 rounded-full bg-blue-500 flex items-center justify-center ring-8 ring-white">
-                <!-- Heroicon name: mini/hand-thumb-up -->
-                <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path d="M1 8.25a1.25 1.25 0 112.5 0v7.5a1.25 1.25 0 11-2.5 0v-7.5zM11 3V1.7c0-.268.14-.526.395-.607A2 2 0 0114 3c0 .995-.182 1.948-.514 2.826-.204.54.166 1.174.744 1.174h2.52c1.243 0 2.261 1.01 2.146 2.247a23.864 23.864 0 01-1.341 5.974C17.153 16.323 16.072 17 14.9 17h-3.192a3 3 0 01-1.341-.317l-2.734-1.366A3 3 0 006.292 15H5V8h.963c.685 0 1.258-.483 1.612-1.068a4.011 4.011 0 012.166-1.73c.432-.143.853-.386 1.011-.814.16-.432.248-.9.248-1.388z" />
-                </svg>
-              </span>
-            </div>
-            <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-              <div>
-                <p class="text-sm text-gray-500">Advanced to interview by <a href="#" class="font-medium text-gray-900">Bethany Blake</a></p>
-              </div>
-              <div class="whitespace-nowrap text-right text-sm text-gray-500">
-                <time datetime="2020-09-30">Sep 30</time>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <li>
-        <div class="relative pb-8">
-          <div class="relative flex space-x-3">
-            <div>
-              <span class="h-8 w-8 rounded-full bg-green-500 flex items-center justify-center ring-8 ring-white">
-                <!-- Heroicon name: mini/check -->
-                <svg class="h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                  <path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" />
-                </svg>
-              </span>
-            </div>
-            <div class="flex min-w-0 flex-1 justify-between space-x-4 pt-1.5">
-              <div>
-                <p class="text-sm text-gray-500">Completed interview with <a href="#" class="font-medium text-gray-900">Katherine Snyder</a></p>
-              </div>
-              <div class="whitespace-nowrap text-right text-sm text-gray-500">
-                <time datetime="2020-10-04">Oct 4</time>
-              </div>
-            </div>
-          </div>
-        </div>
-      </li>
-    </ul>
-  </div>
-  <div class="justify-stretch mt-6 flex flex-col">
-    <button type="button" class="inline-flex items-center justify-center rounded-md border border-transparent bg-blue-600 px-4 py-2 text-sm font-medium text-white shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Advance to offer</button>
-  </div>
+<div class="px-4 py-5 w-full bg-white shadow sm:rounded-lg sm:px-6">
+    <h2 class="text-lg font-medium text-gray-900">@lang('Activity')</h2>
+    <div class="flow-root mt-6">
+        <ul role="list" class="-mb-8">
+            @foreach ($object->activities()->latest()->take(6)->get() as $activity)
+                <li>
+                    <div class="relative pb-8">
+                        <div class="flex relative space-x-3">
+                            <div>
+                                @if ($activity->event == 'deleted')
+                                    <span
+                                        class="flex justify-center items-center w-8 h-8 bg-red-500 rounded-full ring-8 ring-white">
+                                        <svg class="w-5 h-5 text-white" aria-hidden="true" fill="none"
+                                            stroke="currentColor" stroke-width="1.5"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path
+                                                d="M14.74 9l-.346 9m-4.788 0L9.26 9m9.968-3.21c.342.052.682.107 1.022.166m-1.022-.165L18.16 19.673a2.25 2.25 0 01-2.244 2.077H8.084a2.25 2.25 0 01-2.244-2.077L4.772 5.79m14.456 0a48.108 48.108 0 00-3.478-.397m-12 .562c.34-.059.68-.114 1.022-.165m0 0a48.11 48.11 0 013.478-.397m7.5 0v-.916c0-1.18-.91-2.164-2.09-2.201a51.964 51.964 0 00-3.32 0c-1.18.037-2.09 1.022-2.09 2.201v.916m7.5 0a48.667 48.667 0 00-7.5 0"
+                                                stroke-linecap="round" stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                @elseif($activity->event == 'created')
+                                    <span
+                                        class="flex justify-center items-center w-8 h-8 bg-green-500 rounded-full ring-8 ring-white">
+                                        <svg class="w-5 h-5 text-white" aria-hidden="true" fill="none"
+                                            stroke="currentColor" stroke-width="1.5"
+                                            viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 4.5v15m7.5-7.5h-15" stroke-linecap="round"
+                                                stroke-linejoin="round"></path>
+                                        </svg>
+                                    </span>
+                                @else
+                                    <span
+                                        class="flex justify-center items-center w-8 h-8 bg-blue-500 rounded-full ring-8 ring-white">
+                                        <svg class="w-5 h-5 text-white" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor" aria-hidden="true">
+                                            <path fill-rule="evenodd"
+                                                d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </span>
+                                @endif
+                            </div>
+                            <div class="flex flex-wrap flex-1 gap-2 justify-between pt-1.5 space-x-4 min-w-0">
+                                <div>
+                                    <p class="text-sm text-gray-500">
+                                        @lang(class_basename($activity->subject_type))
+                                        @lang($activity->event)
+                                        @lang('by')
+                                        <a href="/admin/users/{{ $activity->causer_id }}"
+                                            class="font-medium text-gray-900">
+                                            {{ $activity->causer?->name ?? class_basename($activity->causer_type) . "($activity->causer_id)" }}
+                                        </a>
+                                    </p>
+                                </div>
+                                <div class="text-sm text-right text-gray-500 whitespace-nowrap">
+                                    <time
+                                        datetime="{{ $activity->created_at->format('Y-m-d') }}">{{ $activity->created_at->diffForHumans() }}</time>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            @endforeach
+        </ul>
+    </div>
 </div>

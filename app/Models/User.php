@@ -9,17 +9,19 @@ use Illuminate\Notifications\Notifiable;
 use Nicolaslopezj\Searchable\SearchableTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, SearchableTrait, SoftDeletes;
+    use HasFactory, Notifiable, SearchableTrait, SoftDeletes, LogsActivity;
 
     protected $guarded = [];
 
     protected $hidden = [
         'password', 'remember_token',
     ];
-    
+
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
@@ -31,12 +33,22 @@ class User extends Authenticatable
     ];
 
     /*
+     * Setup
+     */
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+            ->logUnguarded();
+    }
+
+    /*
      * Attributes
      */
 
     public function setNewPasswordAttribute($value)
     {
-        if(is_null($value)) {
+        if (is_null($value)) {
             return;
         }
         $this->attributes['password'] = Hash::make($value);
@@ -44,6 +56,6 @@ class User extends Authenticatable
 
     public function getAvatarAttribute()
     {
-        return "https://www.gravatar.com/avatar/".md5( strtolower( trim( "MyEmailAddress@example.com " ) ) );
+        return "https://www.gravatar.com/avatar/" . md5(strtolower(trim("MyEmailAddress@example.com ")));
     }
 }

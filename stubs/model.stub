@@ -5,10 +5,12 @@ namespace {{ namespace }};
 use Illuminate\Database\Eloquent\Model;
 use Nicolaslopezj\Searchable\SearchableTrait;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
 
 class {{ class }} extends Model
 {
-	use SearchableTrait, SoftDeletes;
+	use SearchableTrait, SoftDeletes, LogsActivity;
 	
     protected $guarded = [];
     protected $searchable = [
@@ -16,6 +18,16 @@ class {{ class }} extends Model
             'name' => 10,
         ],
     ];
+
+    /*
+     * Setup
+     */
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+            ->logUnguarded();
+    }
 
     /*
      * Relationships
