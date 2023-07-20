@@ -14,7 +14,8 @@
         "livewire/livewire": "^2.10",
         "nicolaslopezj/searchable": "1.*",
         "rap2hpoutre/laravel-log-viewer": "*",
-        "weblabormx/laravel-front": "2.1.19"
+        "weblabormx/laravel-front": "2.1.19",
+        "wireui/wireui": "^1.17"
     },
     "require-dev": {
         "spatie/laravel-ignition": "^2.0",
