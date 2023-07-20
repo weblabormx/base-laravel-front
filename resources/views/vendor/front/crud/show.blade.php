@@ -47,9 +47,10 @@
             @endforeach
         </div>
 
-        <section class="w-1/3">
-            @include('front.extra-show')
-            @include('front.timeline', ['object' => $object])
-        </section>
+        @if (method_exists($object, 'getActivitylogOptions'))
+            <section class="w-1/3">
+                @include('front.timeline', ['object' => $object])
+            </section>
+        @endif
     </div>
 @endsection
