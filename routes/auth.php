@@ -14,14 +14,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::group([], function () {
-
+Route::middleware('guest')->group(function () {
     // * Login
 
     Route::get('login', Livewire\Auth\Login::class)
         ->name('login');
 
+    // * Sign up
 
+    Route::get('register', Livewire\Auth\Register::class)
+        ->name('register');
+});
+
+Route::middleware('auth')->group(function () {
     // * Logout
 
     Route::get('logout', function (Request $request) {
@@ -32,13 +37,6 @@ Route::group([], function () {
 
         return redirect('/');
     })->name('logout');
-
-
-    // * Sign up
-
-    Route::get('register', Livewire\Auth\Register::class)
-        ->name('register');
-
 
     // * Password Reset
 
