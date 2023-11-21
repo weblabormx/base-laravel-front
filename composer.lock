@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0fef965478ea14e0afd0375a5eb3d94f",
+    "content-hash": "3f78c1d339ef98a73221d4c2a3c703ae",
     "packages": [
         {
             "name": "brick/math",
@@ -6553,6 +6553,57 @@
             "time": "2023-04-17T16:42:20+00:00"
         },
         {
+            "name": "weblabormx/tall-utils",
+            "version": "v1.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/weblabormx/tall-utils.git",
+                "reference": "1086d8c23001c675fcdf647d94f85c5a7a55779e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/weblabormx/tall-utils/zipball/1086d8c23001c675fcdf647d94f85c5a7a55779e",
+                "reference": "1086d8c23001c675fcdf647d94f85c5a7a55779e",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": ">=8.0",
+                "wireui/wireui": "^1.17"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "WeblaborMx\\TallUtils\\Providers\\TallUtilsServiceProvider"
+                    ],
+                    "dont-discover": [
+                        "wireui/wireui"
+                    ],
+                    "aliases": []
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "WeblaborMx\\TallUtils\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Carlos Escobar",
+                    "email": "carlosescobar@weblabor.mx"
+                }
+            ],
+            "support": {
+                "issues": "https://github.com/weblabormx/tall-utils/issues",
+                "source": "https://github.com/weblabormx/tall-utils/tree/v1.0.2"
+            },
+            "time": "2023-10-14T05:38:59+00:00"
+        },
+        {
             "name": "webmozart/assert",
             "version": "1.11.0",
             "source": {
@@ -9272,5 +9323,5 @@
         "php": "^8.1"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.6.0"
 }
