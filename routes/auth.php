@@ -18,13 +18,13 @@ Route::group([], function () {
 
     // * Login
 
-    $this->get('login', Livewire\Auth\Login::class)
+    Route::get('login', Livewire\Auth\Login::class)
         ->name('login');
 
 
     // * Logout
 
-    $this->get('logout', function (Request $request) {
+    Route::get('logout', function (Request $request) {
         auth()->guard()->logout();
 
         $request->session()->invalidate();
@@ -36,35 +36,35 @@ Route::group([], function () {
 
     // * Sign up
 
-    $this->get('register', Livewire\Auth\Register::class)
+    Route::get('register', Livewire\Auth\Register::class)
         ->name('register');
 
 
     // * Password Reset
 
-    $this->get('password/reset', Livewire\Auth\ForgotPassword::class)
+    Route::get('password/reset', Livewire\Auth\ForgotPassword::class)
         ->name('password.request');
 
-    $this->get('password/reset/{token}', Livewire\Auth\ResetPassword::class)
+    Route::get('password/reset/{token}', Livewire\Auth\ResetPassword::class)
         ->name('password.reset');
 
 
     // * Password Confirmation
 
-    $this->get('password/confirm', Livewire\Auth\ConfirmPassword::class)
+    Route::get('password/confirm', Livewire\Auth\ConfirmPassword::class)
         ->name('password.confirm');
 
-    $this->post('password/confirm', Livewire\Auth\ConfirmPassword::class);
+    Route::post('password/confirm', Livewire\Auth\ConfirmPassword::class);
 
 
     // * Email Verification
 
-    $this->get('email/verify', Livewire\Auth\Verification::class)
+    Route::get('email/verify', Livewire\Auth\Verification::class)
         ->name('verification.notice');
 
-    $this->get('email/verify/{id}/{hash}', Livewire\Auth\Verification::class)
+    Route::get('email/verify/{id}/{hash}', Livewire\Auth\Verification::class)
         ->name('verification.verify');
 
-    $this->post('email/resend', Livewire\Auth\Verification::class)
+    Route::post('email/resend', Livewire\Auth\Verification::class)
         ->name('verification.resend');
 });
