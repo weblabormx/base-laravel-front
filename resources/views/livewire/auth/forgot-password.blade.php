@@ -21,7 +21,7 @@
 
                 <x-button
                     type="submit"
-                    label="Sign in"
+                    label="Send reset link"
                     primary
                     full
                     lg />
