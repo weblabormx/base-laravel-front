@@ -10,7 +10,6 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^10.0",
         "laravel/tinker": "^2.5",
-        "laravel/ui": "^4.0",
         "livewire/livewire": "^2.10",
         "nicolaslopezj/searchable": "1.*",
         "rap2hpoutre/laravel-log-viewer": "*",

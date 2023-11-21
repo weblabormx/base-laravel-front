@@ -6,7 +6,6 @@ The best way to start building complex applications using Laravel and Front Admi
 
 **This starter kit includes:**
 - [Laravel Front](https://github.com/weblabormx/laravel-front)
-- [Laravel UI](https://github.com/laravel/ui)
 - [Tailwind](https://github.com/tailwindlabs/tailwindcss)
 - [Alpine](https://github.com/alpinejs/alpine)
 - [Livewire](https://github.com/livewire/livewire)
