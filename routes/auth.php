@@ -54,9 +54,6 @@ Route::group([], function () {
     Route::get('password/confirm', Livewire\Auth\ConfirmPassword::class)
         ->name('password.confirm');
 
-    Route::post('password/confirm', Livewire\Auth\ConfirmPassword::class);
-
-
     // * Email Verification
 
     Route::get('email/verify', Livewire\Auth\Verification::class)
