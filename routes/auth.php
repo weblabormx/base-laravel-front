@@ -64,7 +64,4 @@ Route::group([], function () {
 
     Route::get('email/verify/{id}/{hash}', Livewire\Auth\Verification::class)
         ->name('verification.verify');
-
-    Route::post('email/resend', Livewire\Auth\Verification::class)
-        ->name('verification.resend');
 });
