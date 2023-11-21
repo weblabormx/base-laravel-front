@@ -20,7 +20,7 @@ class Login extends Component
     {
         return [
             'email' => 'required|email',
-            'password' => ['required', Password::min(4)],
+            'password' => 'required',
             'remember' => 'boolean'
         ];
     }
