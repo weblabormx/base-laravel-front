@@ -19,7 +19,7 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
-Auth::routes();
+// Auth::routes();
 
 // Front admin panel
 Route::middleware('auth')->prefix('admin')->group(function () {

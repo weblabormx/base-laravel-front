@@ -136,19 +136,12 @@
                                 </div>
                                 <div class="absolute right-0 z-10 py-1 mt-2 w-48 bg-white rounded-md ring-1 ring-black ring-opacity-5 shadow-lg origin-top-right focus:outline-none"
                                     role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button"
-                                    tabindex="-1" x-show="menu_user">
+                                    tabindex="-1" x-show="menu_user" x-cloak>
 
                                     <div class="" aria-labelledby="navbarDropdown">
-                                        <a class="block px-4 py-2 text-sm text-gray-700" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                         document.getElementById('logout-form').submit();">
-                                            {{ __('Sign out') }}
+                                        <a class="block px-4 py-2 text-sm text-gray-700" href="{{ route('logout') }}">
+                                            @lang('Sign out')
                                         </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                            style="display: none;">
-                                            @csrf
-                                        </form>
                                     </div>
                                 </div>
                             </div>
