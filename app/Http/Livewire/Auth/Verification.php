@@ -8,6 +8,6 @@ class Verification extends Component
 {
     public function render()
     {
-        return view('livewire.auth.verification');
+        return view('livewire.auth.verification')->layout('layouts.auth');
     }
 }

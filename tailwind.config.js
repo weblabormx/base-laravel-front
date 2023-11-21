@@ -1,4 +1,5 @@
 import defaultTheme from 'tailwindcss/defaultTheme';
+import colors from 'tailwindcss/colors';
 import forms from '@tailwindcss/forms';
 
 export default {
@@ -14,6 +15,14 @@ export default {
   ],
   theme: {
     extend: {
+      colors: {
+        primary: colors.teal,
+        secondary: colors.gray,
+        positive: colors.emerald,
+        negative: colors.red,
+        warning: colors.amber,
+        info: colors.blue
+      },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
