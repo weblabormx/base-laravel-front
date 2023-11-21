@@ -6,7 +6,7 @@
         </h2>
         <p class="mt-2 text-sm text-center text-gray-600">
             Or
-            <a href="{{ route('register') }}" class="font-medium text-teal-600 hover:text-teal-500">
+            <a href="{{ route('register') }}" class="font-medium text-primary-600 hover:text-primary-500">
                 start your 14-day free trial
             </a>
         </p>
