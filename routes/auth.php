@@ -24,6 +24,14 @@ Route::middleware('guest')->group(function () {
 
     Route::get('register', Livewire\Auth\Register::class)
         ->name('register');
+
+    // * Password Reset
+
+    Route::get('password/reset', Livewire\Auth\ForgotPassword::class)
+        ->name('password.request');
+
+    Route::get('password/reset/{token}', Livewire\Auth\ResetPassword::class)
+        ->name('password.reset');
 });
 
 Route::middleware('auth')->group(function () {
@@ -37,14 +45,6 @@ Route::middleware('auth')->group(function () {
 
         return redirect('/');
     })->name('logout');
-
-    // * Password Reset
-
-    Route::get('password/reset', Livewire\Auth\ForgotPassword::class)
-        ->name('password.request');
-
-    Route::get('password/reset/{token}', Livewire\Auth\ResetPassword::class)
-        ->name('password.reset');
 
 
     // * Password Confirmation
