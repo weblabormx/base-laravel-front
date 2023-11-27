@@ -11,7 +11,7 @@
     <div class="mt-5 md:col-span-3 md:mt-0">
   @endif
         <div class="shadow sm:overflow-hidden sm:rounded-md">
-          <div class="space-y-6 bg-white px-4 py-5 sm:p-6">
+          <div class="md:grid gap-6 px-4 py-5 bg-white sm:p-6 flex flex-col md:grid-cols-12">
             @foreach($panel->fields()->where('needs_to_be_on_panel', true) as $field)
                 {!! $field->formHtml() !!}
             @endforeach
