@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="flex gap-6 mx-auto mt-8">
+    <div class="flex flex-col lg:flex-row gap-6 mx-auto mt-8">
         <div class="flex-1 space-y-6">
             @foreach ($front->showPanels() as $panel)
                 {!! $panel->showHtml($object) !!}
@@ -48,7 +48,7 @@
         </div>
 
         @if (method_exists($object, 'getActivitylogOptions'))
-            <section class="w-1/3">
+            <section class="lg:w-1/3">
                 @include('front.timeline', ['object' => $object])
             </section>
         @endif

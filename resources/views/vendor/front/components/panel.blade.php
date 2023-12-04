@@ -11,10 +11,10 @@
                 <a href="{{$link}}" class="btn btn-outline-dark btn-sm mx-2">{!! $title !!}</a>
             @endforeach
         @endif
-        <h2 id="applicant-information-title" class="text-lg font-medium leading-6 text-gray-900">{{$panel->title ?: 'Basic Information'}}</h2>
+        <h2 id="applicant-information-title" class="text-lg font-medium leading-6 text-gray-900">@lang($panel->title ?: 'Basic Information')</h2>
     </div>
     <div class="border-t border-gray-200 px-4 py-5 sm:px-6">
-      <dl class="grid grid-cols-5 gap-x-4 gap-y-8 ">
+      <dl class="grid grid-cols-12 gap-x-4 gap-y-8 ">
         @foreach($panel->fields() as $field)
             {!! $field->showHtml($object) !!}
         @endforeach
