@@ -59,7 +59,7 @@ return [
     |
     */
 
-    'default_layout' => 'layouts.admin',
+    'default_layout' => 'layouts.front',
 
     /*
     |--------------------------------------------------------------------------
