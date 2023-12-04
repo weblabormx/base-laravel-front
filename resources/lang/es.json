@@ -54,5 +54,13 @@
     ":name updated successfully": ":name editado correctamente",
     ":name action executed successfully": ":name ejecutado correctamente",
     "New rows": "Nuevas filas",
-    "Options": "Opciones"
+    "Options": "Opciones",
+    "Users": "Usuarios",
+    "User": "Usuario",
+    "New Password": "Nueva Contraseña",
+    "Dashboard": "Panel",
+    "Email": "Correo electrónico",
+    "Results": "Resultados",
+    "Activity": "Actividad",
+    "Basic Information": "Información básica"
 }
