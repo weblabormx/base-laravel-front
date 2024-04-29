@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire\Auth;
 
-use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Auth\Events\Verified;
