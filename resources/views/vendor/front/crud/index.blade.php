@@ -3,7 +3,7 @@
 @section('sidebar')
 
     @if(count($front->filters())>0)
-        <div class="sidenav-header small font-weight-semibold mb-2">{{ __('FILTER :name', ['name' => strtoupper($front->plural_label)]) }}</div>
+        <div class="mt-6 font-bold">{{ __('FILTER :name', ['name' => strtoupper($front->plural_label)]) }}</div>
         {!! Form::open(['url' => request()->url(), 'method' => 'get']) !!} 
             <div class="card pt-3 sidenav-forms">
                 {!! Form::hidden($front->getCurrentViewRequestName()) !!}
@@ -11,7 +11,7 @@
                     {!! $filter->formHtml() !!}
                 @endforeach
             </div>
-            {!! Form::submit(__('Search'), ['class' => 'btn btn-secondary btn-sm btn-block']) !!}
+            {!! Form::submit(__('Search'), ['class' => 'bg-green-800 text-white py-2 px-4 rounded block w-full mt-2']) !!}
         {!! Form::close() !!}
     @endif
 
