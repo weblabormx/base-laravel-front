@@ -10152,16 +10152,16 @@
         },
         {
             "name": "weblabormx/weblabor-cs",
-            "version": "v1.0.2",
+            "version": "v1.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/weblabormx/weblabor-cs.git",
-                "reference": "1a4730d1cbe403c82197001bc0c2399f1054d843"
+                "reference": "7d3d4e8a1b615f83f9db8265e18bddd2820dd596"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/weblabormx/weblabor-cs/zipball/1a4730d1cbe403c82197001bc0c2399f1054d843",
-                "reference": "1a4730d1cbe403c82197001bc0c2399f1054d843",
+                "url": "https://api.github.com/repos/weblabormx/weblabor-cs/zipball/7d3d4e8a1b615f83f9db8265e18bddd2820dd596",
+                "reference": "7d3d4e8a1b615f83f9db8265e18bddd2820dd596",
                 "shasum": ""
             },
             "require": {
@@ -10216,7 +10216,7 @@
             ],
             "support": {
                 "issues": "https://github.com/weblabormx/weblabor-cs/issues",
-                "source": "https://github.com/weblabormx/weblabor-cs/tree/v1.0.2"
+                "source": "https://github.com/weblabormx/weblabor-cs/tree/v1.0.4"
             },
             "funding": [
                 {
@@ -10224,7 +10224,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2024-04-29T21:36:09+00:00"
+            "time": "2024-04-29T22:08:27+00:00"
         }
     ],
     "aliases": [],
