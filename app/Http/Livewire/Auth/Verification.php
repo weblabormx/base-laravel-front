@@ -28,7 +28,6 @@ class Verification extends Component
             return;
         }
 
-        /** @var User */
         $user = auth()->user();
 
         throw_unless(
@@ -52,7 +51,6 @@ class Verification extends Component
 
     public function request()
     {
-        /** @var User */
         $user = auth()->user();
 
         if ($user->hasVerifiedEmail()) {
