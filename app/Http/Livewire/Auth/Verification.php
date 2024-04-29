@@ -12,9 +12,8 @@ class Verification extends Component
 {
     use Actions;
 
-    public $userId;
-    public $hash;
-
+	public $userId, $hash;
+    
     public $resent = false;
     public $valid = false;
 

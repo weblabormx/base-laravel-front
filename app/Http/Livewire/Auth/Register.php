@@ -11,11 +11,8 @@ use Livewire\Component;
 
 class Register extends Component
 {
-    public $name;
-    public $email;
-    public $password;
-    public $password_confirmation;
-
+	public $name, $email, $password, $password_confirmation;
+    
     public function rules()
     {
         return [

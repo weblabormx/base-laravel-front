@@ -10,9 +10,8 @@ class Login extends Component
 {
     use Actions;
 
-    public $email;
-    public $password;
-
+	public $email, $password;
+    
     public $remember = false;
 
     public function rules()

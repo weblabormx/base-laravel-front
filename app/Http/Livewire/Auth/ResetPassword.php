@@ -16,11 +16,8 @@ class ResetPassword extends Component
 {
     use Actions;
 
-    public $token;
-    public $email;
-    public $password;
-    public $password_confirmation;
-
+	public $token, $email, $password, $password_confirmation;
+    
     public function rules()
     {
         return [
