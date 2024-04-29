@@ -11,7 +11,7 @@ class Login extends Component
     use Actions;
 
 	public $email, $password;
-    
+
     public $remember = false;
 
     public function rules()

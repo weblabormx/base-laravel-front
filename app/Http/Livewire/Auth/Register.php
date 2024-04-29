@@ -12,7 +12,7 @@ use Livewire\Component;
 class Register extends Component
 {
 	public $name, $email, $password, $password_confirmation;
-    
+
     public function rules()
     {
         return [

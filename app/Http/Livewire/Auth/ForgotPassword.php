@@ -13,8 +13,7 @@ class ForgotPassword extends Component
     use Actions;
 
 	public $email, $origin;
-    
-    
+
     public function rules()
     {
         return [
