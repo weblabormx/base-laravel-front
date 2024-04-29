@@ -18,7 +18,7 @@ return [
     | Model's Folder
     |--------------------------------------------------------------------------
     |
-    | This is the folder location where the models are located, used when  
+    | This is the folder location where the models are located, used when
     | creating resources with the commands.
     |
     */
@@ -43,7 +43,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | The Apply() function on this filter will be used when making a search
-    | for a Front Resource. Used for autocomplete inputs and when adding 
+    | for a Front Resource. Used for autocomplete inputs and when adding
     | searchable() to relationship functions.
     |
     */

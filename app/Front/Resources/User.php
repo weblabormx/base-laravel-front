@@ -2,9 +2,8 @@
 
 namespace App\Front\Resources;
 
-use WeblaborMx\Front\Inputs;
 use App\Models\User as Model;
-use App\Front\Resources\Resource;
+use WeblaborMx\Front\Inputs;
 
 class User extends Resource
 {

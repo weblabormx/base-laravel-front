@@ -3,7 +3,6 @@
 namespace App\Http\Livewire\Auth;
 
 use App\Providers\RouteServiceProvider;
-use Illuminate\Validation\Rules\Password;
 use Livewire\Component;
 use WireUi\Traits\Actions;
 

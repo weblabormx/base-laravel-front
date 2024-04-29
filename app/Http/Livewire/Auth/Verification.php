@@ -24,7 +24,7 @@ class Verification extends Component
         $this->userId = $id;
         $this->hash = $hash;
 
-        if (!$id && !$hash) {
+        if (! $id && ! $hash) {
             return;
         }
 

@@ -25,7 +25,6 @@ class ConfirmPassword extends Component
         return redirect()->intended(RouteServiceProvider::HOME);
     }
 
-
     public function render()
     {
         return view('livewire.auth.confirm-password')->layout('layouts.auth');

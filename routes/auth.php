@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\Route;
 | Authentication Routes
 |--------------------------------------------------------------------------
 |
-| Here are defined all the authentication & authorization routes based on 
+| Here are defined all the authentication & authorization routes based on
 | Laravel UI scaffolding, converted to Livewire components.
 |
 */
@@ -45,7 +45,6 @@ Route::middleware('auth')->group(function () {
 
         return redirect('/');
     })->name('logout');
-
 
     // * Password Confirmation
 

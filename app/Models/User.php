@@ -2,13 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Nicolaslopezj\Searchable\SearchableTrait;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Facades\Hash;
+use Nicolaslopezj\Searchable\SearchableTrait;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
@@ -56,6 +55,6 @@ class User extends Authenticatable
 
     public function getAvatarAttribute()
     {
-        return "https://www.gravatar.com/avatar/" . md5(strtolower(trim("MyEmailAddress@example.com ")));
+        return 'https://www.gravatar.com/avatar/' . md5(strtolower(trim('MyEmailAddress@example.com ')));
     }
 }
