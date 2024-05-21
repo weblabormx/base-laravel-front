@@ -13,7 +13,6 @@ class Verification extends Component
     use Actions;
 
 	public $userId, $hash;
-
     public $resent = false;
     public $valid = false;
 
@@ -39,18 +38,14 @@ class Verification extends Component
         }
 
         throw_unless($user->markEmailAsVerified());
-
         event(new Verified($user));
-
         $this->valid = true;
-
         return $this->redirectTo();
     }
 
     public function request()
     {
         $user = auth()->user();
-
         if ($user->hasVerifiedEmail()) {
             return;
         }

@@ -11,7 +11,6 @@ class Login extends Component
     use Actions;
 
 	public $email, $password;
-
     public $remember = false;
 
     public function rules()
@@ -32,11 +31,8 @@ class Login extends Component
             'password' => $this->password
         ], $this->remember)) {
             $this->reset('password');
-
             session()->put('auth.password_confirmed_at', time());
-
             session()->regenerate();
-
             return redirect()->intended(RouteServiceProvider::HOME);
         }
 

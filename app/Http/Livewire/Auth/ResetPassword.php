@@ -41,13 +41,9 @@ class ResetPassword extends Component
             'password_confirmation' => $this->password_confirmation,
         ], function (User $user, $password) {
             $user->password = Hash::make($password);
-
             $user->setRememberToken(Str::random(60));
-
             $user->save();
-
             event(new PasswordReset($user));
-
             auth()->guard()->login($user);
         });
 
@@ -59,9 +55,7 @@ class ResetPassword extends Component
         }
 
         $this->reset(['password', 'password_confirmation']);
-
         $this->dialog()->success('Success!', 'Your password has been changed');
-
         return redirect(RouteServiceProvider::HOME);
     }
 

@@ -37,11 +37,8 @@ class Register extends Component
         ]);
 
         $this->reset(['password', 'password_confirmation']);
-
         event(new Registered($user));
-
         auth()->login($user);
-
         return redirect(RouteServiceProvider::HOME);
     }
 
