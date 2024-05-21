@@ -1,7 +1,7 @@
 @if($view=='register')
     <div class="flex flex-col justify-center py-12 min-h-full sm:px-6 lg:px-6">
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <img class="mx-auto w-auto h-24" src="{{ asset(config('app.icon')) }}" alt="Your Company">
+            <img class="mx-auto w-auto h-24" src="{{ asset(config('app.icon')) }}" alt="{{ config('app.name') }}">
             <h2 class="mt-6 text-3xl font-bold tracking-tight text-center text-gray-900">{{ __('Create your Account') }}</h2>
         </div>
 
@@ -24,13 +24,17 @@
         </div>
     </div>
 @elseif($view=='verify-email')
-    <div class="justify-center bg-white py-16">
+    <div class="flex flex-col justify-center py-12 min-h-full sm:px-6 lg:px-6">
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
-            <div class="text-center">
-                <h2 class="text-xl font-semibold text-gray-800 mb-4">Please confirm your email</h2>
-                <p class="text-gray-600 mb-6">An email with a code was sent to your email.</p>
-            </div>
+            <img class="mx-auto w-auto h-24" src="{{ asset(config('app.icon')) }}" alt="{{ config('app.name') }}">
+            <h2 class="mt-6 text-3xl font-bold tracking-tight text-center text-gray-900">{{ __('Please confirm your email') }}</h2>
+            <p class="mt-2 text-sm text-center text-gray-600">
+                <a href="{{ route('register') }}" class="font-medium text-primary-600 hover:text-primary-500">
+                    {{ __('A code was sent to your email address') }}
+                </a>
+            </p>
         </div>
+
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-xl">
             <x-card>
                 <form wire:submit.prevent="validateCode" class="flex flex-col gap-6 p-4">

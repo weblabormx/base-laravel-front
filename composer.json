@@ -7,7 +7,7 @@
     "require": {
         "php": "^8.1",
         "doctrine/dbal": "^3.4",
-        "glebsky/laravel-lang-generator": "^1.0",
+        "glebsky/laravel-lang-generator": "dev-main",
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^10.0",
         "laravel/tinker": "^2.5",

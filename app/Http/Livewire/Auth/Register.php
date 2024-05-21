@@ -20,8 +20,7 @@ class Register extends Component
     public function rules()
     {
         return [
-            'user.first_name' => ['required', 'string', 'max:255'],
-            'user.last_name' => ['required', 'string', 'max:255'],
+            'user.name' => ['required', 'string', 'max:255'],
             'user.email' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
             'password' => [
                 'required',
@@ -29,7 +28,6 @@ class Register extends Component
                 Password::min(4),
             ],
             'acceptTerms' => ['accepted'],
-            'type' => ['required'],
         ];
     }
 

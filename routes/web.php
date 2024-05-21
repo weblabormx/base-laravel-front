@@ -32,4 +32,4 @@ Route::middleware('auth')->prefix('app')->group(function () {
 	Route::get('account', Livewire\AccountManager::class);
 });
 
-Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index')->middleware('auth');
+Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
