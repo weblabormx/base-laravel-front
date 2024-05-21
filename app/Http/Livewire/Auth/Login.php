@@ -5,12 +5,12 @@ namespace App\Http\Livewire\Auth;
 use App\Providers\RouteServiceProvider;
 use Livewire\Component;
 use WireUi\Traits\Actions;
-
+use Illuminate\Support\Facades\Auth;
 class Login extends Component
 {
-    use Actions;
+    use Actions, Traits\NeedsVerification;
 
-	public $email, $password;
+	public $email, $password, $code, $user_code, $user;
     public $remember = false;
 
     public function rules()
@@ -26,10 +26,23 @@ class Login extends Component
     {
         $this->validate();
 
-        if (auth()->attempt([
+        if (Auth::attemptWhen([
             'email' => $this->email,
             'password' => $this->password
-        ], $this->remember)) {
+        ], function($user) {
+            // Validate email before login if hasnt been validated yet
+            if(
+                (config('auth.approach') == 'LoginValidation' || config('auth.approach') == 'CreationValidation') && 
+                $this->view == 'normal' &&
+                is_object($user) &&
+                is_null($user->email_verified_at)
+            ) {
+                $this->user = $user;
+                $this->verifyEmail('login');
+                return false;
+            }
+            return true;
+        }, $this->remember)) {
             $this->reset('password');
             session()->put('auth.password_confirmed_at', time());
             session()->regenerate();

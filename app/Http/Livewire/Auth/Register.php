@@ -6,14 +6,13 @@ use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Validation\Rules\Password;
 use Livewire\Component;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\Auth\ValidateEmail;
 
 class Register extends Component
 {
-    public $user, $password, $password_confirmation, $code, $user_code;
+    use Traits\NeedsVerification;
+
+    public $user, $password, $password_confirmation;
     public $acceptTerms = false;
-    public $view = 'register';
 
     public function rules()
     {
@@ -37,11 +36,8 @@ class Register extends Component
     public function register()
     {
         $this->validate();
-        if(config('auth.approach') == 'CreationValidation' && $this->view == 'register') {
-            $this->code = substr(str_shuffle(str_repeat('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', 10)), 0, 10);
-            Mail::to($this->user->email)->send(new ValidateEmail($this->user->full_name, $this->code));
-            $this->view = 'verify-email';
-            return;
+        if(config('auth.approach') == 'CreationValidation' && $this->view == 'normal') {
+            return $this->verifyEmail('register');
         }
 
         $this->user->new_password = $this->password;
@@ -50,15 +46,6 @@ class Register extends Component
         $this->reset(['password', 'password_confirmation']);
         auth()->login($this->user);
         return redirect(RouteServiceProvider::HOME);
-    }
-
-    public function validateCode()
-    {
-        $this->validate([
-            'user_code' => 'required|same:code',
-        ]);
-        $this->user->email_verified_at = now();
-        $this->register();
     }
 
     public function render()

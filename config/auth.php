@@ -8,7 +8,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Normal: Open and normal registration without any email validation
-    | CreationValidation: We validate the email before we create the user
+    | CreationValidation: We validate the email before we create the user, and if already have users not validated will ask when they login
     | LoginValidation: We validate the email before the user login (If hasnt been validated yet)
     |
     */
