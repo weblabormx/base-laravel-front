@@ -1,18 +1,5 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Your new project ✨</title>
-
-    <link rel="shortcut icon" href="{{ asset(config('app.icon')) }}" />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
-</head>
-
-<body class="bg-[#122638]">
-    <div class="px-5 mx-auto max-w-7xl">
+<div>
+<div class="px-5 mx-auto max-w-7xl">
         <div class="grid grid-cols-1 items-center py-20 min-h-screen 2xl:-mt-24 md:grid-cols-2">
             <div class="isolate relative">
                 <h1
@@ -330,6 +317,4 @@
             </div>
         </div>
     </div>
-</body>
-
-</html>
+</div>

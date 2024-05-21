@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-	return view('welcome');
-});
+Route::get('/', Livewire\Web\Home::class);
 
 // Front admin panel
 Route::middleware('auth')->prefix('admin')->group(function () {

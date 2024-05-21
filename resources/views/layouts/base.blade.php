@@ -12,7 +12,7 @@
         @livewireStyles
         @stack('styles')
     </head>
-    <body class="bg-gray-100">
+    <body class="@yield('body-classes', 'bg-gray-100')">
         <x-notifications />
         <x-dialog />
         @yield('content-base')
