@@ -4,8 +4,6 @@ namespace App\Http\Livewire\Auth;
 
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
-use Illuminate\Auth\Events\Registered;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Password;
 use Livewire\Component;
 use Illuminate\Support\Facades\Mail;
@@ -46,16 +44,21 @@ class Register extends Component
             return;
         }
 
-        $user = User::create([
-            'name' => $this->name,
-            'email' => $this->email,
-            'password' => Hash::make($this->password),
-        ]);
+        $this->user->new_password = $this->password;
+        $this->user->save();
 
         $this->reset(['password', 'password_confirmation']);
-        event(new Registered($user));
-        auth()->login($user);
+        auth()->login($this->user);
         return redirect(RouteServiceProvider::HOME);
+    }
+
+    public function validateCode()
+    {
+        $this->validate([
+            'user_code' => 'required|same:code',
+        ]);
+        $this->user->email_verified_at = now();
+        $this->register();
     }
 
     public function render()

@@ -37,13 +37,9 @@
                     </p>
                 </div>
                 <div class="flex flex-wrap gap-5">
-                    <a href="{{ config('front.default_base_url') }}"
+                    <a href="{{ route('login') }}"
                         class="inline-block px-7 py-2 w-full font-bold text-center rounded-xl transition-colors md:w-auto text-teal-50/90 hover:text-white bg-teal-400/10 hover:bg-teal-400/20">
-                        Admin panel
-                    </a>
-                    <a href="/app/account"
-                        class="inline-block px-7 py-2 w-full font-bold text-center rounded-xl transition-colors md:w-auto text-teal-50/90 hover:text-white bg-teal-400/10 hover:bg-teal-400/20">
-                        App panel
+                        {{ __('Login') }}
                     </a>
                 </div>
             </div>
