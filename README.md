@@ -12,3 +12,4 @@ The best way to start building complex applications using Laravel and Front Admi
 - [WireUI](https://livewire-wireui.com/)
 - [Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar)
 - [N+1 Query Detector](https://github.com/beyondcode/laravel-query-detector)
+- [Laravel Lang Generator](https://github.com/glebsky/laravel-lang-generator)
