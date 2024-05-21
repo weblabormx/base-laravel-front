@@ -5,7 +5,7 @@
             {{ __('Sign in to your account') }}
         </h2>
         <p class="mt-2 text-sm text-center text-gray-600">
-            Or
+            {{ __('Or') }}
             <a href="{{ route('register') }}" class="font-medium text-primary-600 hover:text-primary-500">
                 {{ __('register') }}
             </a>
@@ -15,11 +15,11 @@
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <x-card>
             <form wire:submit.prevent="login" class="flex flex-col gap-6 p-4">
-                <x-input label="Email address" wire:model.defer="email" />
-                <x-inputs.password label="Password" wire:model.defer="password" />
+                <x-input :label="__('Email address')" wire:model.defer="email" />
+                <x-inputs.password :label="__('Password')" wire:model.defer="password" />
                 <div class="flex justify-between items-center">
-                    <x-checkbox label="Remember me" wire:model.defer="remember" />
-                    <x-button label="Forgot Your Password?" :href="route('password.request')" primary flat />
+                    <x-checkbox :label="__('Remember me')" wire:model.defer="remember" />
+                    <x-button :label="__('Forgot Your Password?')" :href="route('password.request')" primary flat />
                 </div>
                 <x-button type="submit" label="Sign in" primary full lg />
             </form>
