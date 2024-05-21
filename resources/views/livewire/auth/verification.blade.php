@@ -3,7 +3,7 @@
         <div class="sm:mx-auto sm:w-full sm:max-w-md">
             <img class="mx-auto w-auto h-24" src="{{ asset(config('app.icon')) }}" alt="Your Company">
             <h2 class="mt-6 text-3xl font-bold tracking-tight text-center text-gray-900">
-                @lang('Verify Your Email Address')
+                {{ __('Verify Your Email Address') }}
             </h2>
         </div>
 
@@ -23,7 +23,7 @@
 @else
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <x-card>
-            <p class="italic text-center">Verified!</p>
+            <p class="italic text-center">{{ __('Verified!') }}</p>
         </x-card>
     </div>
 @endif
