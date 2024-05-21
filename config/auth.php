@@ -4,6 +4,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Authentication Aproachs
+    |--------------------------------------------------------------------------
+    |
+    | Normal: Open and normal registration without any email validation
+    | CreationValidation: We validate the email before we create the user
+    | LoginValidation: We validate the email before the user login (If hasnt been validated yet)
+    |
+    */
+
+    'approach' => 'CreationValidation',
+
+    /*
+    |--------------------------------------------------------------------------
     | Authentication Defaults
     |--------------------------------------------------------------------------
     |
