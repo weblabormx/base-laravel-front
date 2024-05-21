@@ -9,8 +9,8 @@
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <x-card>
             <form wire:submit.prevent="confirm" class="flex flex-col gap-6 p-4">
-                <x-inputs.password label="Password" wire:model.defer="password" />
-                <x-button type="submit" label="Confirm" primary full lg />
+                <x-inputs.password :label="__('Password')" wire:model.defer="password" />
+                <x-button type="submit" :label="__('Confirm')" primary full lg />
             </form>
         </x-card>
     </div>

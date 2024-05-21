@@ -7,11 +7,11 @@
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <x-card>
             <form wire:submit.prevent="register" class="flex flex-col gap-6 p-4">
-                <x-input label="Name" wire:model.defer="name" />
-                <x-input label="Email address" wire:model.defer="email" />
-                <x-inputs.password label="Password" wire:model.defer="password" />
-                <x-inputs.password label="Confirm Password" wire:model.defer="password_confirmation" />
-                <x-button type="submit" label="Sign up" primary full lg />
+                <x-input :label="__('Name)" wire:model.defer="name" />
+                <x-input :label="__('Email address')" wire:model.defer="email" />
+                <x-inputs.password :label="__('Password')" wire:model.defer="password" />
+                <x-inputs.password :label="__('Confirm Password')" wire:model.defer="password_confirmation" />
+                <x-button type="submit" :label="__('Sign up')" primary full lg />
             </form>
         </x-card>
     </div>

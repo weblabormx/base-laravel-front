@@ -5,9 +5,8 @@
             {{ __('Sign in to your account') }}
         </h2>
         <p class="mt-2 text-sm text-center text-gray-600">
-            {{ __('Or') }}
             <a href="{{ route('register') }}" class="font-medium text-primary-600 hover:text-primary-500">
-                {{ __('register') }}
+                {{ __('Or create new account') }}
             </a>
         </p>
     </div>

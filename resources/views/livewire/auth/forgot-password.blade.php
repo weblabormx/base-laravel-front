@@ -5,9 +5,8 @@
             {{ __('Reset password') }}
         </h2>
         <p class="mt-2 text-sm text-center text-gray-600">
-            Or go
             <a href="{{ route('login') }}" class="font-medium text-teal-600 hover:text-teal-500">
-                back to login
+                Or go back to login
             </a>
         </p>
     </div>
@@ -15,8 +14,8 @@
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <x-card>
             <form wire:submit.prevent="request" class="flex flex-col gap-6 p-4">
-                <x-input label="Email address"  wire:model.defer="email" />
-                <x-button type="submit" label="Send reset link" primary full lg />
+                <x-input :label="__('Email address')"  wire:model.defer="email" />
+                <x-button type="submit" :label="__('Send reset link')" primary full lg />
             </form>
         </x-card>
     </div>
