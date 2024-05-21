@@ -77,5 +77,10 @@
     "Create your Account": "Crear tu cuenta",
     "Sign up": "Registrarse",
     "Reset Password": "Restablecer contraseña",
-    "Reset": "Restablecer"
+    "Reset": "Restablecer",
+    "Or go back to login": "O regresa al inicio de sesión",
+    "Hi, thanks for you interest on": "Hola, gracias por tu interés en",
+    "Please validate the email address on our site using the next code:": "Por favor valida la dirección de correo electrónico en nuestro sitio usando el siguiente código:",
+    "If you didnt register on our site you can ignore this message.": "Si no te registraste en nuestro sitio puedes ignorar este mensaje.",
+    "Thanks": "Gracias"
 }

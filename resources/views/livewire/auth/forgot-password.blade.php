@@ -6,7 +6,7 @@
         </h2>
         <p class="mt-2 text-sm text-center text-gray-600">
             <a href="{{ route('login') }}" class="font-medium text-teal-600 hover:text-teal-500">
-                Or go back to login
+                {{ __('Or go back to login') }}
             </a>
         </p>
     </div>
