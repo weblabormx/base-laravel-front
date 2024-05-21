@@ -7,7 +7,7 @@
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <x-card>
             <form wire:submit.prevent="register" class="flex flex-col gap-6 p-4">
-                <x-input :label="__('Name)" wire:model.defer="name" />
+                <x-input :label="__('Name')" wire:model.defer="name" />
                 <x-input :label="__('Email address')" wire:model.defer="email" />
                 <x-inputs.password :label="__('Password')" wire:model.defer="password" />
                 <x-inputs.password :label="__('Confirm Password')" wire:model.defer="password_confirmation" />
@@ -15,4 +15,4 @@
             </form>
         </x-card>
     </div>
-</div>
+</div>s
