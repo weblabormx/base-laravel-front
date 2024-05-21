@@ -12,6 +12,12 @@
                     <x-input :label="__('Email address')" wire:model.defer="user.email" />
                     <x-inputs.password :label="__('Password')" wire:model.defer="password" />
                     <x-inputs.password :label="__('Confirm Password')" wire:model.defer="password_confirmation" />
+                    <section class="flex items-baseline gap-2">
+                        <x-checkbox wire:model.defer="acceptTerms" id='acceptTerms' />
+                        <label for='acceptTerms'>
+                            {{ __('I agree to the') }} <a target="_blank" href="{{ route('terms') }}" class="text-primary-500">{{ __('Terms and Conditions') }}</a>
+                        </label>
+                    </section>
                     <x-button type="submit" :label="__('Sign up')" primary full lg />
                 </form>
             </x-card>
