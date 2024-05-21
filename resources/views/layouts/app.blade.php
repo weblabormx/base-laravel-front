@@ -93,7 +93,7 @@
                     <div class="flex items-center ml-4 md:ml-6">
                         <button type="button"
                             class="p-1 text-gray-400 bg-white rounded-full hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
-                            <span class="sr-only">View notifications</span>
+                            <span class="sr-only">{{ __('View notifications') }}</span>
                             <!-- Heroicon name: outline/bell -->
                             <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none"
                                 viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -109,7 +109,7 @@
                                     class="flex items-center max-w-xs text-sm bg-white rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
                                     id="user-menu-button" aria-expanded="false" aria-haspopup="true"
                                     x-on:click="menu_user = !menu_user">
-                                    <span class="sr-only">Open user menu</span>
+                                    <span class="sr-only">{{ __('Open user menu') }}</span>
                                     <img class="w-8 h-8 rounded-full" src="{{ auth()->user()->avatar }}"
                                         alt="Profile image">
                                 </button>
@@ -120,7 +120,7 @@
 
                                 <div class="" aria-labelledby="navbarDropdown">
                                     <a class="block px-4 py-2 text-sm text-gray-700" href="{{ route('logout') }}">
-                                        @lang('Sign out')
+                                        {{ __('Sign out') }}
                                     </a>
                                 </div>
                             </div>
@@ -131,7 +131,8 @@
             <main class="flex-1">
                 <div class="py-6">
                     <div class="px-4 mx-auto sm:px-6 md:px-8">
-                        {{ $slot }}
+                        {{ $slot ?? '' }}
+                        @yield('content-app')
                     </div>
                 </div>
             </main>
