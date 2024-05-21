@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Livewire;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,8 +18,6 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
-// Auth::routes();
-
 // Front admin panel
 Route::middleware('auth')->prefix('admin')->group(function () {
 	Route::page('Dashboard', '/');
@@ -29,6 +26,9 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
 // Livewire admin panel
 Route::middleware('auth')->prefix('app')->group(function () {
+	Route::get('/', function () {
+		return 'Panel App';
+	});
 	Route::get('account', Livewire\AccountManager::class);
 });
 

@@ -16,15 +16,12 @@ class User extends Authenticatable
     use HasFactory, Notifiable, SearchableTrait, SoftDeletes, LogsActivity;
 
     protected $guarded = [];
-
     protected $hidden = [
         'password', 'remember_token',
     ];
-
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
     protected $searchable = [
         'columns' => [
             'name' => 10,
@@ -55,6 +52,6 @@ class User extends Authenticatable
 
     public function getAvatarAttribute()
     {
-        return 'https://www.gravatar.com/avatar/' . md5(strtolower(trim('MyEmailAddress@example.com ')));
+        return 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($this->email)));
     }
 }
