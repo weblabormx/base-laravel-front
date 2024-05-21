@@ -55,7 +55,7 @@ class ResetPassword extends Component
         }
 
         $this->reset(['password', 'password_confirmation']);
-        $this->dialog()->success('Success!', 'Your password has been changed');
+        $this->dialog()->success(__('Success!'), __('Your password has been changed'));
         return redirect(RouteServiceProvider::HOME);
     }
 

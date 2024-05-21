@@ -43,8 +43,8 @@ class ForgotPassword extends Component
 
         $this->dialog()->confirm([
             'icon' => Dialog::SUCCESS,
-            'title' => 'Reset link sent!',
-            'description' => 'Please, check your email for futher instructions',
+            'title' => __('Reset link sent!'),
+            'description' => __('Please, check your email for further instructions'),
             'accept'      => [
                 'label'  => 'Okay',
                 'method' => 'back',

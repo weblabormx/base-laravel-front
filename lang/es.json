@@ -89,5 +89,12 @@
     "A code was sent to your email address": "Se ha enviado un código a tu dirección de correo electrónico",
     "If you didn't register on our site you can ignore this message.": "Si no te registraste en nuestro sitio puedes ignorar este mensaje.",
     "Validation Code": "Código de validación",
-    "Confirm Email": "Confirmar correo electrónico"
+    "Confirm Email": "Confirmar correo electrónico",
+    "Reset link sent!": "¡Enlace de restablecimiento enviado!",
+    "Please, check your email for further instructions": "Por favor, revisa tu correo electrónico para obtener instrucciones adicionales",
+    "Success!": "¡Éxito!",
+    "Your password has been changed": "Tu contraseña ha sido cambiada",
+    "Wrong credentials": "Credenciales incorrectas",
+    "Please, try again": "Por favor, inténtalo de nuevo",
+    "Verification email resent": "Correo electrónico de verificación reenviado"
 }

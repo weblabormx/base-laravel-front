@@ -27,9 +27,7 @@ class AccountManager extends Component
     public function save()
     {
         $this->validate();
-
         $this->user->save();
-
         $this->notification()->success('Updated information');
     }
 }

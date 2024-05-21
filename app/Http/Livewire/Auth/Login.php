@@ -36,7 +36,7 @@ class Login extends Component
             return redirect()->intended(RouteServiceProvider::HOME);
         }
 
-        $this->notification()->error('Wrong credentials', 'Please, try again');
+        $this->notification()->error(__('Wrong credentials'), __('Please, try again'));
     }
 
     public function render()

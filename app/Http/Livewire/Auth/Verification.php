@@ -50,7 +50,7 @@ class Verification extends Component
             return;
         }
 
-        $this->notification()->success('Verification email resent');
+        $this->notification()->success(__('Verification email resent'));
         $user->sendEmailVerificationNotification();
     }
 

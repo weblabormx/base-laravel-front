@@ -50,5 +50,13 @@
     "A code was sent to your email address": "A code was sent to your email address",
     "If you didn't register on our site you can ignore this message.": "If you didn't register on our site you can ignore this message.",
     "Validation Code": "Validation Code",
-    "Confirm Email": "Confirm Email"
+    "Confirm Email": "Confirm Email",
+    "Reset link sent!": "Reset link sent!",
+    "Please, check your email for futher instructions": "Please, check your email for futher instructions",
+    "Success!": "Success!",
+    "Your password has been changed": "Your password has been changed",
+    "Wrong credentials": "Wrong credentials",
+    "Please, try again": "Please, try again",
+    "Verification email resent": "Verification email resent",
+    "Login": "Login"
 }
