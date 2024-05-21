@@ -119,6 +119,16 @@
                                 tabindex="-1" x-show="menu_user" x-cloak>
 
                                 <div class="" aria-labelledby="navbarDropdown">
+                                    @if(Request::segment(1)=='app')
+                                        <a class="block px-4 py-2 text-sm text-gray-700" href="/admin">
+                                            {{ __('Go To Admin Panel') }}
+                                        </a>
+                                    @endif
+                                    @if(Request::segment(1)=='admin')
+                                        <a class="block px-4 py-2 text-sm text-gray-700" href="/app">
+                                            {{ __('Go To User Panel') }}
+                                        </a>
+                                    @endif
                                     <a class="block px-4 py-2 text-sm text-gray-700" href="{{ route('logout') }}">
                                         {{ __('Sign out') }}
                                     </a>
