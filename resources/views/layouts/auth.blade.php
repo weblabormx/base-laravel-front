@@ -1,3 +1,4 @@
-@component('layouts.app')
+@extends('layouts.base')
+@section('content-base')
     {{ $slot }}
-@endcomponent
+@endsection

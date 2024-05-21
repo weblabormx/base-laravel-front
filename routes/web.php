@@ -26,9 +26,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 
 // Livewire admin panel
 Route::middleware('auth')->prefix('app')->group(function () {
-	Route::get('/', function () {
-		return 'Panel App';
-	});
+	Route::get('/', Livewire\App\Dashboard::class);
 	Route::get('account', Livewire\AccountManager::class);
 });
 
