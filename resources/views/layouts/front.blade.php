@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title> @yield('title', config('app.name')) </title>
-
     <link rel="shortcut icon" href="{{ asset(config('app.icon')) }}" />
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
-
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -20,9 +14,7 @@
     <div>
         <div x-data="{ menu_user: false, menu: false }">
             <div class="relative z-40 md:hidden" role="dialog" aria-modal="true" x-show="menu">
-
                 <div class="fixed inset-0 bg-gray-600 bg-opacity-75"></div>
-
                 <div class="flex fixed inset-0 z-40">
                     <div class="flex relative flex-col flex-1 pt-5 pb-4 w-full max-w-xs bg-white">
                         <div class="absolute top-0 right-0 pt-2 -mr-12">

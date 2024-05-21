@@ -18,5 +18,6 @@
         @yield('content-base')
         @livewireScripts
         @stack('scripts')
+        @yield('footer')
     </body>
 </html>

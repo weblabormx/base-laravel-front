@@ -1,9 +1,8 @@
-<div>
- 
-  <div class="relative isolate overflow-hidden pt-16">
+<div class="bg-white p-2 mx-auto border">
+  <div class="relative isolate overflow-hidden">
     <!-- Secondary navigation -->
     <header class="pb-4 pt-6 sm:pb-6">
-      <div class="mx-auto flex max-w-7xl flex-wrap items-center gap-6 px-4 sm:flex-nowrap sm:px-6 lg:px-8">
+      <div class="mx-auto flex flex-wrap items-center gap-6 px-4 sm:flex-nowrap sm:px-6 lg:px-8">
         <h1 class="text-base font-semibold leading-7 text-gray-900">Cashflow</h1>
         <div class="order-last flex w-full gap-x-8 text-sm font-semibold leading-6 sm:order-none sm:w-auto sm:border-l sm:border-gray-200 sm:pl-6 sm:leading-7">
           <a href="#" class="text-indigo-600">Last 7 days</a>
@@ -21,7 +20,7 @@
 
     <!-- Stats -->
     <div class="border-b border-b-gray-900/10 lg:border-t lg:border-t-gray-900/5">
-      <dl class="mx-auto grid max-w-7xl grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:px-2 xl:px-0">
+      <dl class="mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 lg:px-2 xl:px-0">
         <div class="flex items-baseline flex-wrap justify-between gap-y-2 gap-x-4 border-t border-gray-900/5 px-4 py-10 sm:px-6 lg:border-t-0 xl:px-8">
           <dt class="text-sm font-medium leading-6 text-gray-500">Revenue</dt>
           <dd class="text-xs font-medium text-gray-700">+4.75%</dd>
@@ -53,11 +52,11 @@
   <div class="space-y-16 py-16 xl:space-y-20">
     <!-- Recent activity table -->
     <div>
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="mx-auto max-w-2xl text-base font-semibold leading-6 text-gray-900 lg:mx-0 lg:max-w-none">Recent activity</h2>
       </div>
       <div class="mt-6 overflow-hidden border-t border-gray-100">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div class="mx-auto px-4 sm:px-6 lg:px-8">
           <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
             <table class="w-full text-left">
               <thead class="sr-only">
@@ -202,7 +201,7 @@
     </div>
 
     <!-- Recent client list-->
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-2xl lg:mx-0 lg:max-w-none">
         <div class="flex items-center justify-between">
           <h2 class="text-base font-semibold leading-7 text-gray-900">Recent clients</h2>
