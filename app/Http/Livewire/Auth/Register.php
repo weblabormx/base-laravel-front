@@ -22,7 +22,7 @@ class Register extends Component
             'password' => [
                 'required',
                 'confirmed',
-                Password::min(4),
+                Password::min(8),
             ],
             'acceptTerms' => ['accepted'],
         ];
@@ -40,8 +40,7 @@ class Register extends Component
             return $this->verifyEmail('register');
         }
 
-        $this->user->new_password = $this->password;
-        $this->user->save();
+        $this->user->update(['new_password' => $this->password]);
 
         $this->reset(['password', 'password_confirmation']);
         auth()->login($this->user);
