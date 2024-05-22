@@ -13,3 +13,7 @@ The best way to start building complex applications using Laravel and Front Admi
 - [Laravel Debugbar](https://github.com/barryvdh/laravel-debugbar)
 - [N+1 Query Detector](https://github.com/beyondcode/laravel-query-detector)
 - [Laravel Lang Generator](https://github.com/glebsky/laravel-lang-generator)
+
+## Instructions
+- Use lang always as needed
+- Execute ´php artisan lang:generate --append´ to generate the text for english and translate es with chatgpt

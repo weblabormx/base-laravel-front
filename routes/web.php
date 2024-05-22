@@ -17,14 +17,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', Livewire\Web\Home::class);
 
 // Front admin panel
-Route::middleware('auth')->prefix('admin')->group(function () {
+Route::middleware('auth')->prefix('admin')->name('admin.')->group(function () {
 	Route::page('Dashboard', '/');
 	Route::front('User');
 });
 
 // Livewire admin panel
-Route::middleware('auth')->prefix('app')->group(function () {
-	Route::get('/', Livewire\App\Dashboard::class);
+Route::middleware('auth')->prefix('app')->name('app.')->group(function () {
+	Route::get('/', Livewire\App\Dashboard::class)->name('dashboard');
+	Route::get('profile', Livewire\App\MyProfile::class)->name('profile');
 });
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

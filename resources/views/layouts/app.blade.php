@@ -125,10 +125,13 @@
                                         </a>
                                     @endif
                                     @if(Request::segment(1)=='admin')
-                                        <a class="block px-4 py-2 text-sm text-gray-700" href="/app">
+                                        <a class="block px-4 py-2 text-sm text-gray-700" href="{{ route('app.dashboard') }}">
                                             {{ __('Go To User Panel') }}
                                         </a>
                                     @endif
+                                    <a class="block px-4 py-2 text-sm text-gray-700" href="{{ route('app.profile') }}">
+                                        {{ __('My Profile') }}
+                                    </a>
                                     <a class="block px-4 py-2 text-sm text-gray-700" href="{{ route('logout') }}">
                                         {{ __('Sign out') }}
                                     </a>
@@ -141,6 +144,9 @@
             <main class="flex-1">
                 <div class="py-6">
                     <div class="px-4 mx-auto sm:px-6 md:px-8">
+                        @isset($breadcrumb)
+                            @include('layouts.partials.breadcrumbs')
+                        @endisset
                         {{ $slot ?? '' }}
                         @yield('content-app')
                     </div>
