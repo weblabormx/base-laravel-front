@@ -9,12 +9,11 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Nicolaslopezj\Searchable\SearchableTrait;
-use Spatie\Activitylog\LogOptions;
-use Spatie\Activitylog\Traits\LogsActivity;
+use WeblaborMx\TallUtils\Models\WithActivityLog;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable, SearchableTrait, SoftDeletes, LogsActivity;
+    use HasFactory, Notifiable, SearchableTrait, SoftDeletes, WithActivityLog;
 
     protected $guarded = [];
     protected $hidden = [
@@ -28,16 +27,6 @@ class User extends Authenticatable
             'name' => 10,
         ],
     ];
-
-    /*
-     * Setup
-     */
-
-    public function getActivitylogOptions(): LogOptions
-    {
-        return LogOptions::defaults()
-            ->logUnguarded();
-    }
 
     /*
      * Attributes
