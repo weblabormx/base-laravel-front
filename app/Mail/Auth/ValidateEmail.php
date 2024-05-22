@@ -3,7 +3,6 @@
 namespace App\Mail\Auth;
 
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Content;
 use Illuminate\Mail\Mailables\Envelope;
@@ -30,7 +29,7 @@ class ValidateEmail extends Mailable
         return new Content(
             markdown: 'emails.auth.validate_email',
             with: [
-                'name' => $this->name, 
+                'name' => $this->name,
                 'code' => $this->code
             ],
         );

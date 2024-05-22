@@ -2,11 +2,11 @@
 
 namespace App\Http\Livewire\App;
 
-use Livewire\Component;
-use WireUi\Traits\Actions;
-use Livewire\WithFileUploads;
-use Intervention\Image\Facades\Image as Intervention;
 use Illuminate\Support\Facades\Storage;
+use Intervention\Image\Facades\Image as Intervention;
+use Livewire\Component;
+use Livewire\WithFileUploads;
+use WireUi\Traits\Actions;
 
 class MyProfile extends Component
 {
@@ -43,7 +43,7 @@ class MyProfile extends Component
         ]);
         $file_name = 'avatars/'.auth()->id().'.'.$this->avatar->guessExtension();
         $new_file = Intervention::make($this->avatar->temporaryUrl());
-		$new_file->fit(400, 400);	
+		$new_file->fit(400, 400);
         Storage::put($file_name, (string) $new_file->encode());
 
         auth()->user()->update([

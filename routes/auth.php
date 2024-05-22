@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('guest')->group(function () 
+Route::middleware('guest')->group(function ()
 {
     Route::get('login', Livewire\Auth\Login::class)->name('login');
     Route::get('register', Livewire\Auth\Register::class)->name('register');
@@ -23,7 +23,7 @@ Route::middleware('guest')->group(function ()
     Route::get('password/reset/{token}', Livewire\Auth\ResetPassword::class) ->name('password.reset');
 });
 
-Route::middleware('auth')->group(function () 
+Route::middleware('auth')->group(function ()
 {
     Route::get('logout', function (Request $request) {
         auth()->guard()->logout();

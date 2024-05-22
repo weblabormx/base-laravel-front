@@ -2,12 +2,12 @@
 
 namespace App\Http\Livewire\Auth;
 
+use App\Models\User;
 use App\Providers\RouteServiceProvider;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Validation\Rules\Password;
 use Livewire\Component;
 use WireUi\Traits\Actions;
-use Illuminate\Support\Facades\Auth;
-use App\Models\User;
-use Illuminate\Validation\Rules\Password;
 class Login extends Component
 {
     use Actions, Traits\NeedsVerification;
@@ -72,7 +72,7 @@ class Login extends Component
         ], function($user) {
             // Validate email before login if hasnt been validated yet
             if(
-                (config('auth.approach') == 'LoginValidation' || config('auth.approach') == 'CreationValidation') && 
+                (config('auth.approach') == 'LoginValidation' || config('auth.approach') == 'CreationValidation') &&
                 $this->view == 'normal' &&
                 is_object($user) &&
                 is_null($user->email_verified_at)

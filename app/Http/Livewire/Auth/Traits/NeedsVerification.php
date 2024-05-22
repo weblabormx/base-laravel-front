@@ -2,10 +2,10 @@
 
 namespace App\Http\Livewire\Auth\Traits;
 
-use Illuminate\Support\Facades\Mail;
 use App\Mail\Auth\ValidateEmail;
+use Illuminate\Support\Facades\Mail;
 
-trait NeedsVerification 
+trait NeedsVerification
 {
     public $code, $user_code, $afterFunction, $save, $view = 'normal';
 

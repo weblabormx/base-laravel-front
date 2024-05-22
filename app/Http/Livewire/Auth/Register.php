@@ -32,7 +32,7 @@ class Register extends Component
     {
         $this->user = new User;
     }
-    
+
     public function register()
     {
         $this->validate();
