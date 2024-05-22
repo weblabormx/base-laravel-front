@@ -25,7 +25,6 @@ Route::middleware('auth')->prefix('admin')->group(function () {
 // Livewire admin panel
 Route::middleware('auth')->prefix('app')->group(function () {
 	Route::get('/', Livewire\App\Dashboard::class);
-	Route::get('account', Livewire\AccountManager::class);
 });
 
 Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
