@@ -142,7 +142,7 @@
             </div>
             <main class="flex-1">
                 <div class="py-6">
-                    <div class="px-4 mx-auto sm:px-6 md:px-8">
+                    <div class="px-4 mx-auto sm:px-6 md:px-8 relative">
                         @include('flash::message')
                         @isset($breadcrumb)
                             @include('layouts.partials.breadcrumbs')
@@ -154,4 +154,5 @@
             </main>
         </div>
     </div>
+    
 @endsection
