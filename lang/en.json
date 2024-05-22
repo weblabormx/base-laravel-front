@@ -63,5 +63,16 @@
     "Open user menu": "Open user menu",
     "Go To Admin Panel": "Go To Admin Panel",
     "Go To User Panel": "Go To User Panel",
-    "Dashboard": "Dashboard"
+    "Dashboard": "Dashboard",
+    "My Profile": "My Profile",
+    "Manage profile": "Manage profile",
+    "Profile picture": "Profile picture",
+    "JPG, GIF or PNG. Max size of 800K": "JPG, GIF or PNG. Max size of 800K",
+    "Upload picture": "Upload picture",
+    "Delete": "Delete",
+    "Password information": "Password information",
+    "Current password": "Current password",
+    "New password": "New password",
+    "Confirm password": "Confirm password",
+    "Save": "Save"
 }

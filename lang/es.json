@@ -100,5 +100,15 @@
     "View notifications": "Ver notificaciones",
     "Open user menu": "Abrir menú de usuario",
     "Go To Admin Panel": "Ir al Panel de Administrador",
-    "Go To User Panel": "Ir al Panel de Usuario"
+    "Go To User Panel": "Ir al Panel de Usuario",
+    "My Profile": "Mi Perfil",
+    "Manage profile": "Gestionar perfil",
+    "Profile picture": "Foto de perfil",
+    "JPG, GIF or PNG. Max size of 800K": "JPG, GIF o PNG. Tamaño máximo de 800K",
+    "Upload picture": "Subir foto",
+    "Password information": "Información de contraseña",
+    "Current password": "Contraseña actual",
+    "New password": "Nueva contraseña",
+    "Confirm password": "Confirmar contraseña",
+    "Save": "Guardar"
 }

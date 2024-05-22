@@ -11,7 +11,7 @@
                     <div>
                         <h3 class="mb-1 text-xl font-bold text-gray-900 dark:text-white">{{ __('Profile picture') }}</h3>
                         <div class="mb-4 text-sm text-gray-500 dark:text-gray-400">
-                            JPG, GIF or PNG. Max size of 800K
+                            {{ __('JPG, GIF or PNG. Max size of 800K') }}
                         </div>
                         <div class="flex items-center space-x-4">
                             <button type="button" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
@@ -24,6 +24,20 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="col-span-2">
+            <div class="p-4 mb-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+                <h3 class="mb-4 text-xl font-semibold dark:text-white">{{ __('Password information') }}</h3>
+                <form wire:submit.prevent="login" class="flex flex-col gap-6">
+                    <x-inputs.password :label="__('Current password')" wire:model.defer="password.current" />
+                    <x-inputs.password :label="__('New password')" wire:model.defer="password.new" />
+                    <x-inputs.password :label="__('Confirm password')" wire:model.defer="password.confirm" />
+                    
+                    <div class="col-span-6 sm:col-full">
+                        <x-button type="submit" :label="__('Save')" primary md />
+                    </div>
+                </form>
             </div>
         </div>
     </div>
