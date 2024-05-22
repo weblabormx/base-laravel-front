@@ -96,5 +96,9 @@
     "Your password has been changed": "Tu contraseña ha sido cambiada",
     "Wrong credentials": "Credenciales incorrectas",
     "Please, try again": "Por favor, inténtalo de nuevo",
-    "Verification email resent": "Correo electrónico de verificación reenviado"
+    "Verification email resent": "Correo electrónico de verificación reenviado",
+    "View notifications": "Ver notificaciones",
+    "Open user menu": "Abrir menú de usuario",
+    "Go To Admin Panel": "Ir al Panel de Administrador",
+    "Go To User Panel": "Ir al Panel de Usuario"
 }

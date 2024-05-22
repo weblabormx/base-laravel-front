@@ -52,11 +52,16 @@
     "Validation Code": "Validation Code",
     "Confirm Email": "Confirm Email",
     "Reset link sent!": "Reset link sent!",
-    "Please, check your email for futher instructions": "Please, check your email for futher instructions",
     "Success!": "Success!",
     "Your password has been changed": "Your password has been changed",
     "Wrong credentials": "Wrong credentials",
     "Please, try again": "Please, try again",
     "Verification email resent": "Verification email resent",
-    "Login": "Login"
+    "Login": "Login",
+    "Please, check your email for further instructions": "Please, check your email for further instructions",
+    "View notifications": "View notifications",
+    "Open user menu": "Open user menu",
+    "Go To Admin Panel": "Go To Admin Panel",
+    "Go To User Panel": "Go To User Panel",
+    "Dashboard": "Dashboard"
 }
