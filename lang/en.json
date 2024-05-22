@@ -79,5 +79,12 @@
     "Password changed correctly": "Password changed correctly",
     "Avatar updated correctly": "Avatar updated correctly",
     "Profile image": "Profile image",
-    "Change picture": "Change picture"
+    "Change picture": "Change picture",
+    "User not found": "User not found",
+    "Password created": "Password created",
+    "Now you can login": "Now you can login",
+    "Processing...": "Processing...",
+    "Sign in": "Sign in",
+    "New Password": "New Password",
+    "Create password": "Create password"
 }

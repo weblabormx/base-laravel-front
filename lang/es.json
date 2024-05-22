@@ -115,5 +115,11 @@
     "Password changed correctly": "Contraseña cambiada correctamente",
     "Avatar updated correctly": "Avatar actualizado correctamente",
     "Profile image": "Imagen de perfil",
-    "Change picture": "Cambiar imagen"
+    "Change picture": "Cambiar imagen",
+    "User not found": "Usuario no encontrado",
+    "Password created": "Contraseña creada",
+    "Now you can login": "Ahora puedes iniciar sesión",
+    "Processing...": "Procesando...",
+    "Sign in": "Iniciar sesión",
+    "Create password": "Crear contraseña"
 }
