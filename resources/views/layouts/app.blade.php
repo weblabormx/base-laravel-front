@@ -144,11 +144,12 @@
             <main class="flex-1">
                 <div class="py-6">
                     <div class="px-4 mx-auto sm:px-6 md:px-8">
+                        @include('flash::message')
                         @isset($breadcrumb)
                             @include('layouts.partials.breadcrumbs')
                         @endisset
                         {{ $slot ?? '' }}
-                        @yield('content-app')
+                        @yield('content')
                     </div>
                 </div>
             </main>

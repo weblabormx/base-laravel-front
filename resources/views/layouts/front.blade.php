@@ -1,8 +1,4 @@
 @extends('layouts.app')
-@section('content-app')
-    @include('flash::message')
-    @yield('content')
-@endsection
 @section('footer')
     <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"

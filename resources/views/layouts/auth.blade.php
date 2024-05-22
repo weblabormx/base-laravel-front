@@ -1,4 +1,5 @@
 @extends('layouts.base')
 @section('content-base')
-    {{ $slot }}
+    {{ $slot ?? '' }}
+    @yield('content')
 @endsection
