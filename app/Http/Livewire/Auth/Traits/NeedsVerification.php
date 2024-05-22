@@ -7,11 +7,12 @@ use App\Mail\Auth\ValidateEmail;
 
 trait NeedsVerification 
 {
-    public $code, $user_code, $afterFunction, $view = 'normal';
+    public $code, $user_code, $afterFunction, $save, $view = 'normal';
 
-    public function verifyEmail($afterFunction)
+    public function verifyEmail($afterFunction, $save = true)
     {
         $this->afterFunction = $afterFunction;
+        $this->save = $save;
         $this->code = substr(str_shuffle(str_repeat('0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', 10)), 0, 10);
         Mail::to($this->user->email)->send(new ValidateEmail($this->user->full_name, $this->code));
         $this->view = 'verify-email';
@@ -22,10 +23,13 @@ trait NeedsVerification
         $this->validate([
             'user_code' => 'required|same:code',
         ]);
-        $this->user->update(['email_verified_at' => now()]);
-        $this->view = 'normal';
+        $this->user->email_verified_at = now();
+        if($this->save) {
+            $this->user->save();
+        }
         $function = $this->afterFunction;
         $this->$function();
+        $this->view = 'normal';
     }
 
 }

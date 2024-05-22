@@ -36,11 +36,12 @@ class Register extends Component
     public function register()
     {
         $this->validate();
-        if(config('auth.approach') == 'CreationValidation' && $this->view == 'normal') {
-            return $this->verifyEmail('register');
+        if(config('auth.approach') == 'CreationValidation' && is_null($this->user->email_verified_at) && $this->view == 'normal') {
+            return $this->verifyEmail('register', false);
         }
 
-        $this->user->update(['new_password' => $this->password]);
+        $this->user->new_password = $this->password;
+        $this->user->save();
 
         $this->reset(['password', 'password_confirmation']);
         auth()->login($this->user);
