@@ -74,5 +74,10 @@
     "Current password": "Current password",
     "New password": "New password",
     "Confirm password": "Confirm password",
-    "Save": "Save"
+    "Save": "Save",
+    "Sucesss": "Sucesss",
+    "Password changed correctly": "Password changed correctly",
+    "Avatar updated correctly": "Avatar updated correctly",
+    "Profile image": "Profile image",
+    "Change picture": "Change picture"
 }

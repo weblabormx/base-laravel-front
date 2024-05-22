@@ -110,5 +110,10 @@
     "Current password": "Contraseña actual",
     "New password": "Nueva contraseña",
     "Confirm password": "Confirmar contraseña",
-    "Save": "Guardar"
+    "Save": "Guardar",
+    "Sucesss": "Éxito",
+    "Password changed correctly": "Contraseña cambiada correctamente",
+    "Avatar updated correctly": "Avatar actualizado correctamente",
+    "Profile image": "Imagen de perfil",
+    "Change picture": "Cambiar imagen"
 }

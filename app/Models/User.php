@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash;
 use Nicolaslopezj\Searchable\SearchableTrait;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
+use Illuminate\Support\Facades\Storage;
 
 class User extends Authenticatable
 {
@@ -52,6 +53,23 @@ class User extends Authenticatable
 
     public function getAvatarAttribute()
     {
+        if($this->photo) {
+            return cache()->rememberForever('avatar:' . $this->id, function () {
+                $photo = Storage::temporaryUrl(
+                    $this->photo, now()->addMinutes(5)
+                );
+                $content = file_get_contents($photo);
+                $type = pathinfo($photo, PATHINFO_EXTENSION);
+                $base64 = 'data:image/' . $type . ';base64,' . base64_encode($content);
+                return $base64;
+            });
+        }
         return 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($this->email)));
+    }
+
+    public function setPhotoAttribute($value)
+    {
+        cache()->forget('avatar:' . $this->id);
+        $this->attributes['photo'] = $value;
     }
 }

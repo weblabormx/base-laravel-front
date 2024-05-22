@@ -11,13 +11,15 @@
         "guzzlehttp/guzzle": "^7.0.1",
         "laravel/framework": "^10.0",
         "laravel/tinker": "^2.5",
+        "league/flysystem-aws-s3-v3": "^3.0",
         "livewire/livewire": "^2.10",
         "nicolaslopezj/searchable": "1.*",
         "rap2hpoutre/laravel-log-viewer": "*",
         "spatie/laravel-activitylog": "^4.7",
         "weblabormx/laravel-front": "^2.1",
         "weblabormx/tall-utils": "^1.0",
-        "wireui/wireui": "^1.17"
+        "wireui/wireui": "^1.17",
+        "intervention/image": "^2.5"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.8",
