@@ -18,7 +18,7 @@
                         </button>
                     </div>
                     <div class="flex flex-shrink-0 items-center px-4">
-                        <img class="w-auto h-8" src="{{ config('app.logo') }}" alt="Your Company">
+                        <img class="w-auto h-8" src="{{ asset(config('app.logo')) }}" alt="{{ config('app.name') }}">
                     </div>
                     <div class="overflow-y-auto flex-1 mt-5 h-0">
                         <nav class="px-2 space-y-1">
@@ -37,7 +37,7 @@
             <!-- Sidebar component, swap this element with another sidebar if you like -->
             <div class="flex overflow-y-auto flex-col flex-grow pt-5 bg-white border-r border-gray-200">
                 <div class="flex flex-shrink-0 items-center px-4">
-                    <img class="w-auto h-10" src="{{ asset(config('app.icon')) }}" alt="Your Company">
+                    <img class="w-auto h-10" src="{{ asset(config('app.icon')) }}" alt="{{ config('app.name') }}">
                 </div>
                 <div class="flex flex-col flex-grow mt-5">
                     <nav class="flex-1 px-2 pb-4 space-y-1">
@@ -110,8 +110,7 @@
                                     id="user-menu-button" aria-expanded="false" aria-haspopup="true"
                                     x-on:click="menu_user = !menu_user">
                                     <span class="sr-only">{{ __('Open user menu') }}</span>
-                                    <img class="w-8 h-8 rounded-full" src="{{ auth()->user()->avatar }}"
-                                        alt="Profile image">
+                                    <img class="w-8 h-8 rounded-full" src="{{ auth()->user()->avatar }}" alt="{{ __('Profile image') }}">
                                 </button>
                             </div>
                             <div class="absolute right-0 z-10 py-1 mt-2 w-48 bg-white rounded-md ring-1 ring-black ring-opacity-5 shadow-lg origin-top-right focus:outline-none"

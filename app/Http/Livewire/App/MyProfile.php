@@ -4,12 +4,13 @@ namespace App\Http\Livewire\App;
 
 use Livewire\Component;
 use WireUi\Traits\Actions;
+use Livewire\WithFileUploads;
 
 class MyProfile extends Component
 {
-    use Actions;
+    use Actions, WithFileUploads;
 
-    public $password = [];
+    public $password = [], $avatar;
 
     protected function validationAttributes()
     {
@@ -25,12 +26,11 @@ class MyProfile extends Component
             'password.new' => 'required|min:8|confirmed',
             'password.new_confirmation' => 'required',
         ]);
+
         auth()->user()->update([
             'new_password' => $this->password['new'],
         ]);
-
         $this->reset('password');
-
         $this->dialog()->success(__('Sucesss'), __('Password changed correctly'));
     }
     public function render()
