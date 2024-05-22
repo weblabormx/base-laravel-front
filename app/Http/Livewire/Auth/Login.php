@@ -6,12 +6,14 @@ use App\Providers\RouteServiceProvider;
 use Livewire\Component;
 use WireUi\Traits\Actions;
 use Illuminate\Support\Facades\Auth;
+use App\Models\User;
+use Illuminate\Validation\Rules\Password;
 class Login extends Component
 {
     use Actions, Traits\NeedsVerification;
 
 	public $email, $password, $code, $user_code, $user;
-    public $remember = false;
+    public $remember = false, $step = 1;
 
     public function rules()
     {
@@ -20,6 +22,44 @@ class Login extends Component
             'password' => 'required',
             'remember' => 'boolean'
         ];
+    }
+
+    public function loginTwoSteps()
+    {
+        if($this->step==1) {
+            // Email validation
+            $this->validate([
+                'email' => 'required|email'
+            ]);
+            $this->user = User::where('email', $this->email)->first();
+            if(is_null($this->user)) {
+                return $this->notification()->error(__('User not found'), __('Please, try again'));
+            }
+            if(is_null($this->user->email_verified_at)) {
+                $this->verifyEmail('loginTwoSteps');
+                $this->user->refresh();
+                return;
+            }
+            if(is_null($this->user->password)) {
+                $this->step = 3;
+                return;
+            }
+            $this->step = 2;
+        } elseif($this->step==2) {
+            // Password validation
+            $this->validate([
+                'password' => 'required'
+            ]);
+            $this->login();
+        } elseif($this->step==3) {
+            // Create password
+            $this->validate([
+                'password' => ['required', Password::min(8)]
+            ]);
+            $this->user->update(['new_password' => $this->password]);
+            $this->notification()->success(__('Password created'), __('Now you can login'));
+            $this->login();
+        }
     }
 
     public function login()

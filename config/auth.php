@@ -17,6 +17,19 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Login steps
+    |--------------------------------------------------------------------------
+    |
+    | One: On the view you will have to enter the email and password
+    | Two: On the view you will have to enter the email, then as a second step you will put the password. This help in 
+    |      case we created the user on some process of the app and we want to validate the email before the user login or create the password if is not set
+    |
+    */
+
+    'login_steps' => 'one',
+
+    /*
+    |--------------------------------------------------------------------------
     | Authentication Defaults
     |--------------------------------------------------------------------------
     |

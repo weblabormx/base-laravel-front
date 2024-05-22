@@ -14,15 +14,38 @@
 
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
             <x-card>
-                <form wire:submit.prevent="login" class="flex flex-col gap-6 p-4">
-                    <x-input :label="__('Email address')" wire:model.defer="email" />
-                    <x-inputs.password :label="__('Password')" wire:model.defer="password" />
-                    <div class="flex justify-between items-center">
-                        <x-checkbox :label="__('Remember me')" wire:model.defer="remember" />
-                        <x-button :label="__('Forgot Your Password?')" :href="route('password.request')" primary flat />
-                    </div>
-                    <x-button type="submit" label="Sign in" primary full lg />
-                </form>
+                @if(config('auth.login_steps')=='two')
+                    @if($step==1)
+                        <form wire:submit.prevent="loginTwoSteps" class="flex flex-col gap-6 p-4">
+                            <x-input :label="__('Email address')" wire:model.defer="email" />
+                            <x-button type="submit" :label="__('Sign in')" primary full lg />
+                        </form>
+                    @elseif($step==2)
+                        <form wire:submit.prevent="loginTwoSteps" class="flex flex-col gap-6 p-4">
+                        <x-inputs.password :label="__('Password')" wire:model.defer="password" />
+                            <div class="flex justify-between items-center">
+                                <x-checkbox :label="__('Remember me')" wire:model.defer="remember" />
+                                <x-button :label="__('Forgot Your Password?')" :href="route('password.request')" primary flat />
+                            </div>
+                            <x-button type="submit" :label="__('Sign in')" primary full lg />
+                        </form>
+                    @elseif($step==3)
+                        <form wire:submit.prevent="loginTwoSteps" class="flex flex-col gap-6 p-4">
+                            <x-inputs.password :label="__('New Password')" wire:model.defer="password" />
+                            <x-button type="submit" :label="__('Create password')" primary full lg />
+                        </form>
+                    @endif
+                @else
+                    <form wire:submit.prevent="login" class="flex flex-col gap-6 p-4">
+                        <x-input :label="__('Email address')" wire:model.defer="email" />
+                        <x-inputs.password :label="__('Password')" wire:model.defer="password" />
+                        <div class="flex justify-between items-center">
+                            <x-checkbox :label="__('Remember me')" wire:model.defer="remember" />
+                            <x-button :label="__('Forgot Your Password?')" :href="route('password.request')" primary flat />
+                        </div>
+                        <x-button type="submit" :label="__('Sign in')" primary full lg />
+                    </form>
+                @endif
             </x-card>
         </div>
     </div>

@@ -23,6 +23,7 @@ trait NeedsVerification
             'user_code' => 'required|same:code',
         ]);
         $this->user->update(['email_verified_at' => now()]);
+        $this->view = 'normal';
         $function = $this->afterFunction;
         $this->$function();
     }
