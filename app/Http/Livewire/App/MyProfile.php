@@ -30,7 +30,7 @@ class MyProfile extends Component
         ]);
 
         auth()->user()->update([
-            'new_password' => $this->password['new'],
+            'password' => $this->password['new'],
         ]);
         $this->reset('password');
         $this->dialog()->success(__('Sucesss'), __('Password changed correctly'));
@@ -41,9 +41,9 @@ class MyProfile extends Component
         $this->validate([
             'avatar' => 'required|image|max:1024',
         ]);
-        $file_name = 'avatars/'.auth()->id().'.'.$this->avatar->guessExtension();
+        $file_name = 'avatars/' . auth()->id() . '.' . $this->avatar->guessExtension();
         $new_file = Intervention::make($this->avatar->temporaryUrl());
-		$new_file->fit(400, 400);
+        $new_file->fit(400, 400);
         Storage::put($file_name, (string) $new_file->encode());
 
         auth()->user()->update([
@@ -55,10 +55,6 @@ class MyProfile extends Component
 
     public function render()
     {
-        return view('livewire.app.my-profile')->extends('layouts.app', [
-            'breadcrumb' => [
-                ['label' => __('My Profile'), 'url' => route('app.profile')]
-            ]
-        ]);
+        return view('livewire.app.my-profile');
     }
 }

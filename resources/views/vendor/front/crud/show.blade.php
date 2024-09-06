@@ -15,9 +15,25 @@
         </div>
     </div>
 
-    <div class="flex flex-col lg:flex-row gap-6 mx-auto mt-8">
+    @php $panels = $front->showPanels(); @endphp
+    <div class="flex flex-wrap gap-6 mx-auto mt-8">
         <div class="flex-1 space-y-6">
-            @foreach ($front->showPanels() as $panel)
+            {!! $panels->shift()->showHtml($object) !!}
+        </div>
+
+        @if (method_exists($object, 'activities'))
+            @php $activities = $object->activities()->latest()->take(6)->get(); @endphp
+            @if ($activities->isNotEmpty())
+                <section class="w-1/3">
+                    @include('front.timeline', ['activities' => $activities])
+                </section>
+            @endif
+        @endif
+    </div>
+
+    <div class="flex gap-6 mx-auto mt-8">
+        <div class="flex-1 space-y-6">
+            @foreach ($panels as $panel)
                 {!! $panel->showHtml($object) !!}
             @endforeach
 
@@ -26,19 +42,20 @@
             @endphp
 
             @foreach ($front->showRelations() as $key => $relation)
+                <hr class="my-10">
                 @php $porcentage += $relation->width_porcentage(); @endphp
-                <div class="relation" style="{{ $relation->style_width() }}">
-                    <div class="pb-4">
-                        <h4 class="d-flex justify-content-between align-items-center">
-                            <div>{{ $relation->title }}</div>
-                            <div>
-                                @foreach ($relation->getLinks($object, $key, $front) as $button)
-                                    {!! $button->form() !!}
-                                @endforeach
-                            </div>
+                <div style="{{ $relation->style_width() }}">
+                    <div class="flex justify-between items-center">
+                        <h4 class="text-3xl font-bold">
+                            {{ $relation->title }}
                         </h4>
-                        {!! $relation->getValue($object) !!}
+                        <div>
+                            @foreach ($relation->getLinks($object, $key, $front) as $button)
+                                {!! $button->form() !!}
+                            @endforeach
+                        </div>
                     </div>
+                    {!! $relation->getValue($object) !!}
                 </div>
                 @if ($porcentage >= 100)
                     @php $porcentage = 0; @endphp
@@ -46,11 +63,5 @@
                 @endif
             @endforeach
         </div>
-
-        @if (method_exists($object, 'getActivitylogOptions'))
-            <section class="lg:w-1/3">
-                @include('front.timeline', ['object' => $object])
-            </section>
-        @endif
     </div>
 @endsection

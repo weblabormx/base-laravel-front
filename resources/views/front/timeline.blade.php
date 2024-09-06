@@ -2,7 +2,7 @@
     <h2 class="text-lg font-medium text-gray-900">@lang('Activity')</h2>
     <div class="flow-root mt-6">
         <ul role="list" class="-mb-8">
-            @foreach ($object->activities()->latest()->take(6)->get() as $activity)
+            @foreach ($activities as $activity)
                 <li>
                     <div class="relative pb-8">
                         <div class="flex relative space-x-3">
