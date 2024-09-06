@@ -3,16 +3,18 @@
     'url' => '/admin',
     'icon' => 'home',
 ])
-@foreach (collect(get_declared_classes())->filter(fn($v) => str_starts_with($v, 'App\\Front\\Resources\\')) as $resource)
+@foreach (front_resources() as $resource)
     @if (auth()->user()->can('viewAny', $resource))
         @php
-            $instance = new $resource();
+            $instance = app($resource);
         @endphp
-        @include('front.sidebar-link', [
-            'name' => str(class_basename($resource))->plural()->toString(),
-            'url' => $instance->base_url,
-            'icon' => $instance?->icon ?? 'collection',
-        ])
+        @if ($instance->showOnMenu)
+            @include('front.sidebar-link', [
+                'name' => $instance->plural_label,
+                'url' => $instance->base_url,
+                'icon' => $instance?->icon ?? 'collection',
+            ])
+        @endif
     @endif
 @endforeach
 @yield('sidebar')
