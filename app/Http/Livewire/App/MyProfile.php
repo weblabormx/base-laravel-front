@@ -30,7 +30,7 @@ class MyProfile extends Component
         ]);
 
         auth()->user()->update([
-            'new_password' => $this->password['new'],
+            'password' => $this->password['new'],
         ]);
         $this->reset('password');
         $this->dialog()->success(__('Sucesss'), __('Password changed correctly'));

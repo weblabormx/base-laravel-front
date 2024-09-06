@@ -2,12 +2,11 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Storage;
 use Nicolaslopezj\Searchable\SearchableTrait;
 use WeblaborMx\TallUtils\Models\WithActivityLog;
 
@@ -17,10 +16,12 @@ class User extends Authenticatable
 
     protected $guarded = [];
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'password' => 'hashed'
     ];
     protected $searchable = [
         'columns' => [
@@ -32,33 +33,25 @@ class User extends Authenticatable
      * Attributes
      */
 
-    public function setNewPasswordAttribute($value)
+    protected function email(): Attribute
     {
-        if (is_null($value)) {
-            return;
-        }
-        $this->attributes['password'] = Hash::make($value);
+        // Always ensure normalization of emails
+        return Attribute::make(
+            get: fn($value) => strtolower(trim($value)),
+            set: fn($value) => strtolower(trim($value))
+        );
     }
 
-    public function getAvatarAttribute()
+    protected function avatar(): Attribute
     {
-        if($this->photo) {
-            return cache()->rememberForever('avatar:' . $this->id, function () {
-                $photo = Storage::temporaryUrl(
-                    $this->photo, now()->addMinutes(5)
-                );
-                $content = file_get_contents($photo);
-                $type = pathinfo($photo, PATHINFO_EXTENSION);
-                $base64 = 'data:image/' . $type . ';base64,' . base64_encode($content);
-                return $base64;
-            });
-        }
-        return 'https://www.gravatar.com/avatar/' . md5(strtolower(trim($this->email)));
-    }
+        return Attribute::get(function () {
+            if ($this->photo) {
+                return $this->photo;
+            }
 
-    public function setPhotoAttribute($value)
-    {
-        cache()->forget('avatar:' . $this->id);
-        $this->attributes['photo'] = $value;
+            $md5 = md5($this->email);
+
+            return "https://api.dicebear.com/9.x/thumbs/png?seed={$md5}&size=120";
+        })->shouldCache();
     }
 }
