@@ -8,10 +8,10 @@
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <x-card>
-            <form wire:submit.prevent="resetPassword" class="flex flex-col gap-6 p-4">
-                <x-input :label="__('Email address')"  wire:model.defer="email" />
-                <x-inputs.password :label="__('Password')" wire:model.defer="password" />
-                <x-inputs.password :label="__('Confirm Password')" wire:model.defer="password_confirmation" />
+            <form wire:submit="resetPassword" class="flex flex-col gap-6 p-4">
+                <x-input :label="__('Email address')"  wire:model="email" />
+                <x-password :label="__('Password')" wire:model="password" />
+                <x-password :label="__('Confirm Password')" wire:model="password_confirmation" />
                 <x-button type="submit" :label="__('Reset')" primary full lg />
             </form>
             </form>

@@ -14,23 +14,25 @@ if (!function_exists('front_resources')) {
      */
     function front_resources(string $prefix = '', bool $sameLevel = false): Collection
     {
-        $prefix = class_path(config('front.resources_folder'), '\\', $prefix) . '\\';
+        return once(function () use ($prefix, $sameLevel): Collection {
+            $prefix = class_path(config('front.resources_folder'), '\\', $prefix) . '\\';
 
-        $resources = collect(get_declared_classes())
-            ->filter(fn($className) => str_starts_with($className, $prefix))
-            ->filter(fn($className) => is_subclass_of($className, \WeblaborMx\Front\Resource::class))
-            ->filter(function ($className) {
-                $class = new \ReflectionClass($className);
-                return $class->isInstantiable();
-            });
+            $resources = collect(get_declared_classes())
+                ->filter(fn($className) => str_starts_with($className, $prefix))
+                ->filter(fn($className) => is_subclass_of($className, \WeblaborMx\Front\Resource::class))
+                ->filter(function ($className) {
+                    $class = new \ReflectionClass($className);
+                    return $class->isInstantiable();
+                });
 
-        if ($sameLevel) {
-            $resources = $resources->filter(
-                fn($className) =>  !str_contains(Str::after($className, $prefix), '\\')
-            );
-        }
+            if ($sameLevel) {
+                $resources = $resources->filter(
+                    fn($className) =>  !str_contains(Str::after($className, $prefix), '\\')
+                );
+            }
 
-        return $resources;
+            return $resources;
+        });
     }
 }
 

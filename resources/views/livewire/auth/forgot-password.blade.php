@@ -13,8 +13,8 @@
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
         <x-card>
-            <form wire:submit.prevent="request" class="flex flex-col gap-6 p-4">
-                <x-input :label="__('Email address')"  wire:model.defer="email" />
+            <form wire:submit="request" class="flex flex-col gap-6 p-4">
+                <x-input :label="__('Email address')"  wire:model="email" />
                 <x-button type="submit" :label="__('Send reset link')" primary full lg />
             </form>
         </x-card>

@@ -1,6 +1,9 @@
-import 'bootstrap';
-import Alpine from 'alpinejs'
+import { Livewire, Alpine } from '../../vendor/livewire/livewire/dist/livewire.esm';
 
-window.Alpine = Alpine
+// Alpine.plugin(yourCustomPlugin);
 
-Alpine.start()
+Livewire.start();
+
+document.addEventListener('alpine:init', () => {
+    // Add your AlpineJs code here...
+});

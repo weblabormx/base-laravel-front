@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Livewire;
+use App\Livewire\Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,25 +14,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('guest')->group(function ()
-{
-    Route::get('login', Livewire\Auth\Login::class)->name('login');
-    Route::get('register', Livewire\Auth\Register::class)->name('register');
-    Route::get('terms', Livewire\Auth\TermsAndConditions::class)->name('terms');
-    Route::get('password/reset', Livewire\Auth\ForgotPassword::class)->name('password.request');
-    Route::get('password/reset/{token}', Livewire\Auth\ResetPassword::class) ->name('password.reset');
+Route::middleware('guest')->group(function () {
+    Route::get('login', Auth\Login::class)->name('login');
+    Route::get('register', Auth\Register::class)->name('register');
+    Route::get('terms', Auth\TermsAndConditions::class)->name('terms');
+    Route::get('password/reset', Auth\ForgotPassword::class)->name('password.request');
+    Route::get('password/reset/{token}', Auth\ResetPassword::class)->name('password.reset');
 });
 
-Route::middleware('auth')->group(function ()
-{
+Route::middleware('auth')->group(function () {
+    Route::get('password/confirm', Auth\ConfirmPassword::class)->name('password.confirm');
+    Route::get('email/verify', Auth\Verification::class)->name('verification.notice');
+    Route::get('email/verify/{id}/{hash}', Auth\Verification::class)->name('verification.verify');
+
     Route::get('logout', function (Request $request) {
         auth()->guard()->logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
         return redirect('/');
     })->name('logout');
-
-    Route::get('password/confirm', Livewire\Auth\ConfirmPassword::class)->name('password.confirm');
-    Route::get('email/verify', Livewire\Auth\Verification::class)->name('verification.notice');
-    Route::get('email/verify/{id}/{hash}', Livewire\Auth\Verification::class)->name('verification.verify');
 });

@@ -11,8 +11,8 @@
 
     <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-xl">
         <x-card>
-            <form wire:submit.prevent="validateCode" class="flex flex-col gap-6 p-4">
-                <x-input :label="__('Validation Code')" wire:model.defer="user_code" />
+            <form wire:submit="validateCode" class="flex flex-col gap-6 p-4">
+                <x-input :label="__('Validation Code')" wire:model="user_code" />
                 <x-button type="submit" :label="__('Confirm Email')" primary full lg />
             </form>
         </x-card>

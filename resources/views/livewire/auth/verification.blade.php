@@ -9,7 +9,7 @@
 
         <div class="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
             <x-card>
-                <form wire:submit.prevent="request" class="flex flex-col gap-6 p-4">
+                <form wire:submit="request" class="flex flex-col gap-6 p-4">
                     <p class="text-center">
                         {{ __('Before proceeding, please check your email for a verification link.') }}
                         {{ __('If you did not receive the email') }},
