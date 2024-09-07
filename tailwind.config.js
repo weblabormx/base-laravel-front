@@ -4,6 +4,8 @@ import forms from '@tailwindcss/forms';
 
 export default {
   content: [
+    './app/Front/**/*.php',
+    './app/Livewire/**/*.php',
     "./resources/**/*.blade.php",
     "./resources/**/*.js",
     "./vendor/wireui/wireui/src/*.php",
