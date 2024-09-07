@@ -1,7 +1,7 @@
 <?php
 
 return [
-    App\Providers\RouteServiceProvider::class,
-    App\Providers\AppServiceProvider::class,
+    App\Providers\RateLimiterProvider::class,
     App\Providers\LocalTemporaryUrlProvider::class,
+    App\Providers\AppServiceProvider::class,
 ];
