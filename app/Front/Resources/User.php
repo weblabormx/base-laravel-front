@@ -18,7 +18,7 @@ class User extends Resource
             Inputs\ID::make(),
             Inputs\Text::make('Name')->rules('required'),
             Inputs\Text::make('Email')->rules(['required', 'email']),
-            Inputs\Password::make('New Password')->rules(['string', 'min:8', 'nullable'])->creationRules('required'),
+            Inputs\Password::make('Password')->rules(['string', 'min:8', 'nullable'])->creationRules('required'),
         ];
     }
 }
